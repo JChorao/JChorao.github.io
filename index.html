@@ -9,77 +9,119 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Hero Section -->
+    <!-- Header -->
     <header class="bg-white border-b sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tighter">JOÃO OLIVEIRA</h1>
-            <nav class="space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-blue-600">About</a>
-                <a href="#education" class="hover:text-blue-600">Education</a>
-                <a href="#skills" class="hover:text-blue-600">Skills</a>
-                <a href="#contact" class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">Contact</a>
+            <nav class="space-x-6 text-sm font-medium text-gray-500">
+                <a href="#about" class="hover:text-black">About</a>
+                <a href="#experience" class="hover:text-black">Experience</a>
+                <a href="#education" class="hover:text-black">Education</a>
+                <a href="#contact" class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-12">
         
-        <!-- Profile & Intro -->
+        <!-- Intro -->
         <section id="about" class="flex flex-col md:flex-row items-center gap-12 mb-20">
-            <img src="https://via.placeholder.com/150" alt="João Oliveira" class="w-48 h-48 rounded-full border-4 border-white shadow-lg">
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
+                <img src="https://via.placeholder.com/150" alt="João Oliveira" class="w-full h-full object-cover">
+            </div>
             <div>
                 <h2 class="text-4xl font-extrabold mb-4">Computer Engineer & Developer</h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Passionate about building scalable systems and solving complex problems. Currently pursuing a BSc in Computer Engineering at IPCB.
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                    Dedicated to building efficient software solutions and optimizing systems. Currently refining my skills through a BSc in Computer Engineering at IPCB.
                 </p>
-                <div class="mt-6 flex gap-4">
-                    <a href="https://github.com/JChorao" class="text-2xl hover:text-gray-600"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/joao-oliveira-4462b2231" class="text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                <div class="mt-6 flex gap-4 text-gray-400">
+                    <a href="https://github.com/JChorao" target="_blank" class="text-2xl hover:text-black"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="w-8 h-1 bg-black mr-4"></span> Work Experience
+            </h3>
+            <div class="space-y-12">
+                <!-- Babel -->
+                <div class="flex flex-col md:flex-row md:gap-8">
+                    <div class="md:w-1/4 mb-2">
+                        <p class="font-bold text-gray-400">Jul 2024 - Present</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-xl font-bold">Summer Intern</h4>
+                        <p class="text-blue-600 font-medium mb-2">Babel</p>
+                        <p class="text-gray-600 italic">Castelo Branco, Portugal (Hybrid)</p>
+                    </div>
+                </div>
+
+                <!-- Introsys -->
+                <div class="flex flex-col md:flex-row md:gap-8 border-t pt-8">
+                    <div class="md:w-1/4 mb-2">
+                        <p class="font-bold text-gray-400">Mar 2022 - Jul 2022</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-xl font-bold">Intern</h4>
+                        <p class="text-blue-600 font-medium mb-2">INTROSYS - Global Control Systems Designers</p>
+                        <p class="text-gray-600 mb-4 italic">Castelo Branco, Portugal (Hybrid)</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Curricular internship associated with the Associate Degree (TeSP) in Information Systems Technology and Programming.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Education -->
         <section id="education" class="mb-20">
-            <h3 class="text-2xl font-bold mb-8 border-l-4 border-black pl-4">Education</h3>
-            <div class="space-y-8">
-                <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-black before:rounded-full">
-                    <h4 class="font-bold text-lg text-black">BSc, Computer Engineering</h4>
-                    <p class="text-gray-600">Instituto Politécnico de Castelo Branco | 2023 – Present</p>
+            <h3 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="w-8 h-1 bg-black mr-4"></span> Education
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl border">
+                    <h4 class="font-bold text-lg">BSc, Computer Engineering</h4>
+                    <p class="text-blue-600">Polytechnic University of Castelo Branco</p>
+                    <p class="text-gray-400 text-sm mt-2">2023 – Present</p>
                 </div>
-                <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-gray-400 before:rounded-full">
+                <div class="bg-white p-6 rounded-2xl border">
                     <h4 class="font-bold text-lg">Associate Degree, Information Systems Technology and Programming</h4>
-                    <p class="text-gray-600">Instituto Politécnico de Castelo Branco | 2020 – 2023</p>
+                    <p class="text-blue-600">Polytechnic University of Castelo Branco</p>
+                    <p class="text-gray-400 text-sm mt-2">2020 – 2023</p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Grid -->
-        <section id="skills" class="mb-20">
-            <h3 class="text-2xl font-bold mb-8 border-l-4 border-black pl-4">Technical Stack</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Java</div>
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">.NET</div>
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">PHP</div>
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Python</div>
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Node.js</div>
-                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Databases</div>
+        <!-- Skills -->
+        <section id="skills" class="mb-20 text-center">
+            <h3 class="text-2xl font-bold mb-8">Technical Stack</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">Java</span>
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">.NET</span>
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">PHP</span>
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">Python</span>
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">Node.js</span>
+                <span class="px-6 py-2 bg-gray-100 rounded-full font-medium">SQL Databases</span>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="bg-black text-white p-10 rounded-3xl text-center">
-            <h3 class="text-3xl font-bold mb-4">Let's work together.</h3>
-            <p class="text-gray-400 mb-8">Currently based in Covilhã, Portugal. Open to new opportunities.</p>
-            <a href="mailto:joao.97.oliveira@gmail.com" class="inline-block bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">
-                Send an Email
-            </a>
+        <!-- Contact CTA -->
+        <section id="contact" class="bg-black text-white p-12 rounded-[2rem] text-center">
+            <h3 class="text-3xl font-bold mb-4">Interested in my work?</h3>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto">I'm always open to discussing new projects and opportunities in software development.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:joao.97.oliveira@gmail.com" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">Email Me</a>
+                <a href="https://linkedin.com/in/joao-oliveira-4462b2231" class="border border-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-900 transition">View LinkedIn</a>
+            </div>
         </section>
 
     </main>
 
-    <footer class="py-10 text-center text-gray-400 text-sm">
-        © 2026 João Oliveira. Built with clean code.
+    <footer class="py-12 text-center text-gray-400 text-xs uppercase tracking-widest">
+        © 2026 João Oliveira
     </footer>
 
 </body>

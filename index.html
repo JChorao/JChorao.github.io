@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Oliveira | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Hero Section -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tighter">JOÃO OLIVEIRA</h1>
+            <nav class="space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-600">About</a>
+                <a href="#education" class="hover:text-blue-600">Education</a>
+                <a href="#skills" class="hover:text-blue-600">Skills</a>
+                <a href="#contact" class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Profile & Intro -->
+        <section id="about" class="flex flex-col md:flex-row items-center gap-12 mb-20">
+            <img src="https://via.placeholder.com/150" alt="João Oliveira" class="w-48 h-48 rounded-full border-4 border-white shadow-lg">
+            <div>
+                <h2 class="text-4xl font-extrabold mb-4">Computer Engineer & Developer</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Passionate about building scalable systems and solving complex problems. Currently pursuing a BSc in Computer Engineering at IPCB.
+                </p>
+                <div class="mt-6 flex gap-4">
+                    <a href="https://github.com/JChorao" class="text-2xl hover:text-gray-600"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/joao-oliveira-4462b2231" class="text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 border-l-4 border-black pl-4">Education</h3>
+            <div class="space-y-8">
+                <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-black before:rounded-full">
+                    <h4 class="font-bold text-lg text-black">BSc, Computer Engineering</h4>
+                    <p class="text-gray-600">Instituto Politécnico de Castelo Branco | 2023 – Present</p>
+                </div>
+                <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-gray-400 before:rounded-full">
+                    <h4 class="font-bold text-lg">Associate Degree, Information Systems Technology and Programming</h4>
+                    <p class="text-gray-600">Instituto Politécnico de Castelo Branco | 2020 – 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Grid -->
+        <section id="skills" class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 border-l-4 border-black pl-4">Technical Stack</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Java</div>
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">.NET</div>
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">PHP</div>
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Python</div>
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Node.js</div>
+                <div class="bg-white p-4 rounded-xl border hover:shadow-md transition">Databases</div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="bg-black text-white p-10 rounded-3xl text-center">
+            <h3 class="text-3xl font-bold mb-4">Let's work together.</h3>
+            <p class="text-gray-400 mb-8">Currently based in Covilhã, Portugal. Open to new opportunities.</p>
+            <a href="mailto:joao.97.oliveira@gmail.com" class="inline-block bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">
+                Send an Email
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="py-10 text-center text-gray-400 text-sm">
+        © 2026 João Oliveira. Built with clean code.
+    </footer>
+
+</body>
+</html>

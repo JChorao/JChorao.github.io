@@ -52,7 +52,7 @@
             "techs": ["Raspberry Pi", "Firebase", "Hardware"]
         },
         {
-            "title": "Personal GitHub Projects",
+            "title": "Projetos Escolares",
             "tag": "Github",
             "desc": "Coleção de projetos focados em APIs, monitorização de dados e lógica de jogos.",
             "techs": ["Node.js", "Java", "Express"],
@@ -78,5 +78,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Bases de Dados", "Node.js", "Spring Boot", "OutSystems", "Python"]
+    "skills": ["Java", "PHP", "Bases de Dados", "Node.js", "Spring Boot", "Python"]
 }

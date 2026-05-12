@@ -113,6 +113,20 @@
         </div>
     </div>
 
+    <div id="nav-menu" class="fixed inset-0 z-[80] hidden flex-col items-center justify-center p-6 bg-[#F5F5DC]/95 dark:bg-[#121212]/95 backdrop-blur-xl">
+        <button id="close-menu" class="absolute top-8 right-8 text-3xl text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
+            <i class="fa-solid fa-times"></i>
+        </button>
+        <nav class="flex flex-col items-center gap-8 text-2xl font-bold tracking-widest uppercase">
+            <a href="#about" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-about"></a>
+            <a href="#experience" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-work"></a>
+            <a href="#education" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-education"></a>
+            <a href="#projects" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-projects"></a>
+            <a href="#skills" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-skills"></a>
+            <a href="#contact" class="menu-link hover:text-blue-600 dark:hover:text-blue-400 transition" id="nav-contact"></a>
+        </nav>
+    </div>
+
     <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
         <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all">
             <i class="fa-solid fa-bars"></i>
@@ -148,6 +162,14 @@
             document.getElementById('contact-desc').textContent = data.contactDesc;
             document.getElementById('contact-btn').textContent = data.contactBtn;
             document.getElementById('menu-label').textContent = data.menuLabel;
+
+            // Traduções do Menu de Navegação
+            document.getElementById('nav-about').textContent = data.nav.about;
+            document.getElementById('nav-work').textContent = data.nav.work;
+            document.getElementById('nav-education').textContent = data.nav.education;
+            document.getElementById('nav-projects').textContent = data.nav.projects;
+            document.getElementById('nav-skills').textContent = data.nav.skills;
+            document.getElementById('nav-contact').textContent = data.nav.contact;
 
             const projGrid = document.getElementById('proj-grid');
             projGrid.innerHTML = data.projects.map((proj, index) => {
@@ -224,6 +246,27 @@
             const icon = document.getElementById('theme-icon');
             icon.classList.toggle('fa-moon');
             icon.classList.toggle('fa-sun');
+        });
+
+        // Lógica para o Menu de Navegação
+        const navMenu = document.getElementById('nav-menu');
+        
+        function toggleMenu() {
+            if (navMenu.classList.contains('hidden')) {
+                navMenu.classList.remove('hidden');
+                navMenu.classList.add('flex');
+            } else {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('flex');
+            }
+        }
+
+        document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+        document.getElementById('close-menu').addEventListener('click', toggleMenu);
+
+        // Fecha o menu ao clicar num dos links
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
         });
 
         loadLanguage('en');

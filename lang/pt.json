@@ -1,5 +1,5 @@
 {
-    "heroTitle": "Engenheiro Informático & Developer",
+    "heroTitle": "Developer",
     "heroDesc": "Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.",
     "expTitle": "Experiência",
     "projTitle": "Projetos",
@@ -17,7 +17,7 @@
     },
     "experiences": [
         {
-            "date": "Jul 2024 - Presente",
+            "date": "Jul 2024",
             "role": "Estagiário de Verão",
             "company": "Babel",
             "desc": "Desenvolvimento de plataforma e-commerce em OutSystems, focada em lógica de negócio e integração de bases de dados."

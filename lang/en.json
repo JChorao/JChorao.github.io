@@ -1,5 +1,5 @@
 {
-    "heroTitle": "Computer Engineer & Developer",
+    "heroTitle": "Developer",
     "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills through a BSc in Computer Engineering at IPCB.",
     "expTitle": "Experience",
     "projTitle": "Projects",
@@ -17,7 +17,7 @@
     },
     "experiences": [
         {
-            "date": "Jul 2024 - Present",
+            "date": "Jul 2024",
             "role": "Summer Intern",
             "company": "Babel",
             "desc": "Development of an e-commerce platform using OutSystems, focused on business logic and database integration."

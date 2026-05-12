@@ -146,12 +146,11 @@
     </div>
 
     <script>
-        let currentLang = 'pt';
+        let currentLang = 'en'; // Alterado de 'pt' para 'en'
         let contentData = {};
 
         async function loadLanguage(lang) {
             try {
-                // Ajustado para procurar na pasta lang em minúsculas
                 const response = await fetch(`lang/${lang}.json`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -249,8 +248,8 @@
         document.querySelectorAll('.menu-link').forEach(link => link.addEventListener('click', toggleModal));
 
         // Initial Load
-        loadLanguage('pt');
-        loadLanguage('en');
+        loadLanguage('en'); // Mantém o carregamento do inglês
+        loadLanguage('pt'); // Mantém o carregamento do português também para quando trocares
     </script>
 </body>
 </html>

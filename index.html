@@ -13,13 +13,28 @@
     <header class="bg-white border-b sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tighter">JOÃO OLIVEIRA</h1>
-            <nav class="space-x-6 text-sm font-medium text-gray-500">
+            
+            <!-- Botão Hambúrguer (Apenas visível em telemóvel) -->
+            <button id="menu-btn" class="block md:hidden text-gray-500 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Menu Desktop -->
+            <nav id="menu" class="hidden md:flex space-x-6 text-sm font-medium text-gray-500 items-center">
                 <a href="#about" class="hover:text-black">About</a>
                 <a href="#experience" class="hover:text-black">Experience</a>
                 <a href="#education" class="hover:text-black">Education</a>
                 <a href="#contact" class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">Contact</a>
             </nav>
         </div>
+
+        <!-- Menu Mobile (Escondido por padrão) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-4 shadow-lg">
+            <a href="#about" class="block text-sm font-medium text-gray-500 hover:text-black">About</a>
+            <a href="#experience" class="block text-sm font-medium text-gray-500 hover:text-black">Experience</a>
+            <a href="#education" class="block text-sm font-medium text-gray-500 hover:text-black">Education</a>
+            <a href="#contact" class="block bg-black text-white text-center px-4 py-2 rounded-full font-medium">Contact</a>
+        </nav>
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-12">
@@ -29,12 +44,12 @@
             <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
                 <img src="https://via.placeholder.com/150" alt="João Oliveira" class="w-full h-full object-cover">
             </div>
-            <div>
+            <div class="text-center md:text-left">
                 <h2 class="text-4xl font-extrabold mb-4">Computer Engineer & Developer</h2>
                 <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
                     Dedicated to building efficient software solutions and optimizing systems. Currently refining my skills through a BSc in Computer Engineering at IPCB.
                 </p>
-                <div class="mt-6 flex gap-4 text-gray-400">
+                <div class="mt-6 flex justify-center md:justify-start gap-4 text-gray-400">
                     <a href="https://github.com/JChorao" target="_blank" class="text-2xl hover:text-black"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
                 </div>
@@ -47,7 +62,6 @@
                 <span class="w-8 h-1 bg-black mr-4"></span> Work Experience
             </h3>
             <div class="space-y-12">
-                <!-- Babel -->
                 <div class="flex flex-col md:flex-row md:gap-8">
                     <div class="md:w-1/4 mb-2">
                         <p class="font-bold text-gray-400">Jul 2024 - Present</p>
@@ -59,7 +73,6 @@
                     </div>
                 </div>
 
-                <!-- Introsys -->
                 <div class="flex flex-col md:flex-row md:gap-8 border-t pt-8">
                     <div class="md:w-1/4 mb-2">
                         <p class="font-bold text-gray-400">Mar 2022 - Jul 2022</p>
@@ -88,7 +101,7 @@
                     <p class="text-gray-400 text-sm mt-2">2023 – Present</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border">
-                    <h4 class="font-bold text-lg">Associate Degree, Information Systems Technology and Programming</h4>
+                    <h4 class="font-bold text-lg text-sm md:text-lg leading-tight">Associate Degree, Information Systems Technology and Programming</h4>
                     <p class="text-blue-600">Polytechnic University of Castelo Branco</p>
                     <p class="text-gray-400 text-sm mt-2">2020 – 2023</p>
                 </div>
@@ -109,9 +122,9 @@
         </section>
 
         <!-- Contact CTA -->
-        <section id="contact" class="bg-black text-white p-12 rounded-[2rem] text-center">
-            <h3 class="text-3xl font-bold mb-4">Interested in my work?</h3>
-            <p class="text-gray-400 mb-8 max-w-md mx-auto">I'm always open to discussing new projects and opportunities in software development.</p>
+        <section id="contact" class="bg-black text-white p-8 md:p-12 rounded-[2rem] text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">Interested in my work?</h3>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto text-sm md:text-base">I'm always open to discussing new projects and opportunities in software development.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="mailto:joao.97.oliveira@gmail.com" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">Email Me</a>
                 <a href="https://linkedin.com/in/joao-oliveira-4462b2231" class="border border-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-900 transition">View LinkedIn</a>
@@ -123,6 +136,24 @@
     <footer class="py-12 text-center text-gray-400 text-xs uppercase tracking-widest">
         © 2026 João Oliveira
     </footer>
+
+    <!-- Script para o Menu Mobile -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu ao clicar num link
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>

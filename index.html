@@ -127,7 +127,7 @@
 
     </main>
 
-    <!-- Botão Flutuante (FAB) Sticky -->
+    <!-- Botão Flutuante (FAB) -->
     <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
         <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all active:scale-95">
             <i class="fa-solid fa-layer-group"></i>
@@ -135,32 +135,35 @@
         </button>
     </div>
 
-    <!-- Modal de Navegação Grid 2x2 -->
+    <!-- Modal de Navegação Grid 2x2 Ajustada para 40% -->
     <div id="menu-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6">
         <div id="modal-overlay" class="absolute inset-0 bg-black/40 dark:bg-black/90 backdrop-blur-sm"></div>
         
-        <div class="relative w-full max-w-[280px] bg-white dark:bg-zinc-900 rounded-[2.5rem] p-6 shadow-2xl border border-gray-100 dark:border-zinc-800 transform scale-95 transition-transform">
-            <div class="flex justify-between items-center mb-6 px-2">
-                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400">Navigation</span>
-                <button id="close-btn" class="text-gray-400 hover:text-black dark:hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+        <!-- Largura definida para 40% do ecrã -->
+        <div class="relative w-[40%] min-w-[280px] max-w-[450px] bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800 transform scale-95 transition-transform">
+            <div class="flex justify-between items-center mb-8 px-2">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Navigation</span>
+                <button id="close-btn" class="text-gray-400 hover:text-black dark:hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
             </div>
             
-            <nav class="grid grid-cols-2 gap-3">
-                <a href="#about" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-3xl border border-transparent hover:border-blue-500 transition-all group active:scale-90">
-                    <i class="fa-solid fa-user mb-2 text-gray-400 group-hover:text-blue-500 text-xs"></i>
-                    <span class="text-[10px] font-bold dark:text-zinc-200">About</span>
+            <nav class="grid grid-cols-2 gap-4">
+                <a href="#about" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
+                    <i class="fa-solid fa-user mb-3 text-gray-400 group-hover:text-blue-500 text-lg"></i>
+                    <span class="text-[12px] font-bold dark:text-zinc-200">About</span>
                 </a>
-                <a href="#experience" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-3xl border border-transparent hover:border-blue-500 transition-all group active:scale-90">
-                    <i class="fa-solid fa-briefcase mb-2 text-gray-400 group-hover:text-blue-500 text-xs"></i>
-                    <span class="text-[10px] font-bold dark:text-zinc-200">Work</span>
+                <a href="#experience" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
+                    <i class="fa-solid fa-briefcase mb-3 text-gray-400 group-hover:text-blue-500 text-lg"></i>
+                    <span class="text-[12px] font-bold dark:text-zinc-200">Work</span>
                 </a>
-                <a href="#education" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-3xl border border-transparent hover:border-blue-500 transition-all group active:scale-90">
-                    <i class="fa-solid fa-graduation-cap mb-2 text-gray-400 group-hover:text-blue-500 text-xs"></i>
-                    <span class="text-[10px] font-bold dark:text-zinc-200">Studies</span>
+                <a href="#education" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
+                    <i class="fa-solid fa-graduation-cap mb-3 text-gray-400 group-hover:text-blue-500 text-lg"></i>
+                    <span class="text-[12px] font-bold dark:text-zinc-200">Studies</span>
                 </a>
-                <a href="mailto:joao.97.oliveira@gmail.com" class="menu-link flex flex-col items-center justify-center aspect-square bg-blue-600 rounded-3xl hover:bg-blue-700 transition-all active:scale-90 shadow-lg shadow-blue-500/20">
-                    <i class="fa-solid fa-envelope mb-2 text-white text-xs"></i>
-                    <span class="text-[10px] font-bold text-white">Contact</span>
+                <a href="mailto:joao.97.oliveira@gmail.com" class="menu-link flex flex-col items-center justify-center aspect-square bg-blue-600 rounded-[2rem] hover:bg-blue-700 transition-all active:scale-90 shadow-xl shadow-blue-500/20">
+                    <i class="fa-solid fa-envelope mb-3 text-white text-lg"></i>
+                    <span class="text-[12px] font-bold text-white">Contact</span>
                 </a>
             </nav>
         </div>

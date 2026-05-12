@@ -2,6 +2,7 @@
     "heroTitle": "Developer",
     "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills through a BSc in Computer Engineering at IPCB.",
     "expTitle": "Experience",
+    "eduTitle": "Education",
     "projTitle": "Projects",
     "skillsTitle": "Technical Skills",
     "contactTitle": "Contact Me",
@@ -11,6 +12,7 @@
     "nav": {
         "about": "About",
         "work": "Work",
+        "education": "Education",
         "projects": "Projects",
         "skills": "Skills",
         "contact": "Contact"
@@ -27,6 +29,18 @@
             "role": "Intern",
             "company": "INTROSYS",
             "desc": "Developed a REST API using .NET, focused on backend architecture and DB communication."
+        }
+    ],
+    "education": [
+        {
+            "date": "2023 - Current",
+            "degree": "BSc, Computer Engineering",
+            "school": "Instituto Politécnico de Castelo Branco"
+        },
+        {
+            "date": "2020 - 2023",
+            "degree": "Associate Degree, Information Systems Technology and Programming",
+            "school": "Instituto Politécnico de Castelo Branco"
         }
     ],
     "projects": [

@@ -2,6 +2,7 @@
     "heroTitle": "Developer",
     "heroDesc": "Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.",
     "expTitle": "Experiência",
+    "eduTitle": "Educação",
     "projTitle": "Projetos",
     "skillsTitle": "Competências Técnicas",
     "contactTitle": "Contactos",
@@ -11,6 +12,7 @@
     "nav": {
         "about": "Sobre",
         "work": "Trabalho",
+        "education": "Educação",
         "projects": "Projetos",
         "skills": "Skills",
         "contact": "Contactos"
@@ -27,6 +29,18 @@
             "role": "Estagiário",
             "company": "INTROSYS",
             "desc": "Desenvolvimento de REST API com .NET, focada em arquitetura backend e comunicação com BD."
+        }
+    ],
+    "education": [
+        {
+            "date": "2023 - Presente",
+            "degree": "Licenciatura em Engenharia Informática",
+            "school": "Instituto Politécnico de Castelo Branco"
+        },
+        {
+            "date": "2020 - 2023",
+            "degree": "CTeSP em Tecnologias e Programação de Sistemas de Informação",
+            "school": "Instituto Politécnico de Castelo Branco"
         }
     ],
     "projects": [

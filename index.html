@@ -54,7 +54,7 @@
                 <p id="hero-desc" class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
                     ...
                 </p>
-                    <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
                         <i class="fa-solid fa-envelope"></i> joao.97.oliveira@gmail.com
                     </div>
                 </div>
@@ -71,6 +71,15 @@
                 <span id="exp-title">...</span>
             </h3>
             <div id="exp-list" class="space-y-12">
+            </div>
+        </section>
+
+        <section id="education" class="mb-24">
+            <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
+                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
+                <span id="edu-title">...</span>
+            </h3>
+            <div id="edu-list" class="space-y-12">
             </div>
         </section>
 
@@ -125,6 +134,10 @@
                     <i class="fa-solid fa-briefcase mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
                     <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-work">Trabalho</span>
                 </a>
+                <a href="#education" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
+                    <i class="fa-solid fa-graduation-cap mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-education">Educação</span>
+                </a>
                 <a href="#projects" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
                     <i class="fa-solid fa-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
                     <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-projects">Projetos</span>
@@ -133,8 +146,8 @@
                     <i class="fa-solid fa-laptop-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
                     <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-skills">Skills</span>
                 </a>
-                <a href="#contact" class="menu-link col-span-2 flex flex-col items-center justify-center py-6 bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-envelope mb-2 text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                <a href="#contact" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
+                    <i class="fa-solid fa-envelope mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
                     <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-contact">Contactos</span>
                 </a>
             </nav>
@@ -165,6 +178,7 @@
             document.getElementById('hero-title').textContent = data.heroTitle;
             document.getElementById('hero-desc').textContent = data.heroDesc;
             document.getElementById('exp-title').textContent = data.expTitle;
+            document.getElementById('edu-title').textContent = data.eduTitle;
             document.getElementById('proj-title').textContent = data.projTitle;
             document.getElementById('skills-title').textContent = data.skillsTitle;
             document.getElementById('contact-title').textContent = data.contactTitle;
@@ -175,6 +189,7 @@
             // Update Nav
             document.querySelector('[data-key="nav-about"]').textContent = data.nav.about;
             document.querySelector('[data-key="nav-work"]').textContent = data.nav.work;
+            document.querySelector('[data-key="nav-education"]').textContent = data.nav.education;
             document.querySelector('[data-key="nav-projects"]').textContent = data.nav.projects;
             document.querySelector('[data-key="nav-skills"]').textContent = data.nav.skills;
             document.querySelector('[data-key="nav-contact"]').textContent = data.nav.contact;
@@ -188,6 +203,18 @@
                         <h4 class="text-xl font-bold dark:text-zinc-100">${exp.role}</h4>
                         <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">${exp.company}</p>
                         <p class="text-gray-600 dark:text-zinc-400 leading-relaxed text-sm">${exp.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Education
+            const eduList = document.getElementById('edu-list');
+            eduList.innerHTML = data.education.map(edu => `
+                <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
+                    <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${edu.date}</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-xl font-bold dark:text-zinc-100">${edu.degree}</h4>
+                        <p class="text-blue-600 dark:text-blue-400 font-medium">${edu.school}</p>
                     </div>
                 </div>
             `).join('');

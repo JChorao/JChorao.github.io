@@ -1,0 +1,63 @@
+{
+    "heroTitle": "Engenheiro Informático & Developer",
+    "heroDesc": "Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.",
+    "expTitle": "Experiência",
+    "projTitle": "Projetos",
+    "skillsTitle": "Competências Técnicas",
+    "contactTitle": "Contactos",
+    "contactDesc": "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me contactar através do LinkedIn!",
+    "contactBtn": "Contactar no LinkedIn",
+    "menuLabel": "MENU",
+    "nav": {
+        "about": "Sobre",
+        "work": "Trabalho",
+        "projects": "Projetos",
+        "skills": "Skills",
+        "contact": "Contactos"
+    },
+    "experiences": [
+        {
+            "date": "Jul 2024 - Presente",
+            "role": "Estagiário de Verão",
+            "company": "Babel",
+            "desc": "Desenvolvimento de plataforma e-commerce em OutSystems, focada em lógica de negócio e integração de bases de dados."
+        },
+        {
+            "date": "Mar 2022 - Jul 2022",
+            "role": "Estagiário",
+            "company": "INTROSYS",
+            "desc": "Desenvolvimento de REST API com .NET, focada em arquitetura backend e comunicação com BD."
+        }
+    ],
+    "projects": [
+        {
+            "title": "VitraeWindow",
+            "tag": "Projeto Final",
+            "desc": "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão de conteúdos em tempo real.",
+            "techs": [
+                "Raspberry Pi",
+                "Firebase",
+                "Hardware Integration"
+            ]
+        },
+        {
+            "title": "Projetos Pessoais GitHub",
+            "tag": "Github",
+            "desc": "Coleção de projetos académicos e pessoais envolvendo sistemas backend, APIs e soluções Java.",
+            "techs": [
+                "Java",
+                "Spring Boot",
+                "Node.js"
+            ]
+        }
+    ],
+    "skills": [
+        "Java",
+        "PHP",
+        "Bases de Dados",
+        "Node.js",
+        "Spring Boot",
+        ".NET",
+        "Python"
+    ]
+}

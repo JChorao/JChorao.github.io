@@ -1,0 +1,63 @@
+{
+    "heroTitle": "Computer Engineer & Developer",
+    "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills through a BSc in Computer Engineering at IPCB.",
+    "expTitle": "Experience",
+    "projTitle": "Projects",
+    "skillsTitle": "Technical Skills",
+    "contactTitle": "Contact Me",
+    "contactDesc": "I'm always open to new opportunities and collaborations. Feel free to reach out to me via LinkedIn!",
+    "contactBtn": "Contact on LinkedIn",
+    "menuLabel": "MENU",
+    "nav": {
+        "about": "About",
+        "work": "Work",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "experiences": [
+        {
+            "date": "Jul 2024 - Present",
+            "role": "Summer Intern",
+            "company": "Babel",
+            "desc": "Development of an e-commerce platform using OutSystems, focused on business logic and database integration."
+        },
+        {
+            "date": "Mar 2022 - Jul 2022",
+            "role": "Intern",
+            "company": "INTROSYS",
+            "desc": "Developed a REST API using .NET, focused on backend architecture and DB communication."
+        }
+    ],
+    "projects": [
+        {
+            "title": "VitraeWindow",
+            "tag": "Final Project",
+            "desc": "Turning standard windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time content management.",
+            "techs": [
+                "Raspberry Pi",
+                "Firebase",
+                "Hardware Integration"
+            ]
+        },
+        {
+            "title": "Personal GitHub Projects",
+            "tag": "Github",
+            "desc": "Collection of academic and personal projects involving backend systems, APIs, and Java solutions.",
+            "techs": [
+                "Java",
+                "Spring Boot",
+                "Node.js"
+            ]
+        }
+    ],
+    "skills": [
+        "Java",
+        "PHP",
+        "Databases",
+        "Node.js",
+        "Spring Boot",
+        ".NET",
+        "Python"
+    ]
+}

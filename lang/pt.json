@@ -28,7 +28,7 @@
             "date": "Mar 2022 - Jul 2022",
             "role": "Estagiário",
             "company": "INTROSYS",
-            "desc": "Desenvolvimento de REST API com .NET, focada em arquitetura backend e comunicação com BD."
+            "desc": "Desenvolvimento de REST API com Node.js, focada em arquitetura backend e comunicação com bases de dados."
         }
     ],
     "education": [
@@ -47,31 +47,36 @@
         {
             "title": "VitraeWindow",
             "tag": "Projeto Final",
-            "desc": "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão de conteúdos em tempo real.",
-            "techs": [
-                "Raspberry Pi",
-                "Firebase",
-                "Hardware Integration"
-            ]
+            "link": "https://github.com/JChorao/VitraeWindow",
+            "desc": "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão em tempo real.",
+            "techs": ["Raspberry Pi", "Firebase", "Hardware"]
         },
         {
-            "title": "Projetos Pessoais GitHub",
+            "title": "Personal GitHub Projects",
             "tag": "Github",
-            "desc": "Coleção de projetos académicos e pessoais envolvendo sistemas backend, APIs e soluções Java.",
-            "techs": [
-                "Java",
-                "Spring Boot",
-                "Node.js"
+            "desc": "Coleção de projetos focados em APIs, monitorização de dados e lógica de jogos.",
+            "techs": ["Node.js", "Java", "Express"],
+            "subProjects": [
+                {
+                    "title": "RestAPI",
+                    "link": "https://github.com/JChorao/RestAPI",
+                    "desc": "Interface robusta para manipulação de dados utilizando Azure e Swagger.",
+                    "techs": ["Node.js", "Express", "Azure"]
+                },
+                {
+                    "title": "CryptoTracker",
+                    "link": "https://github.com/JChorao/CryptoTracker",
+                    "desc": "Monitorização de preços de criptomoedas em tempo real.",
+                    "techs": ["Node.js", "Express", "Crypto API"]
+                },
+                {
+                    "title": "ESTouro",
+                    "link": "https://github.com/JChorao/ESTouro",
+                    "desc": "Jogo de estratégia desenvolvido em Java aplicando padrões de desenho.",
+                    "techs": ["Java", "OOP", "Game Logic"]
+                }
             ]
         }
     ],
-    "skills": [
-        "Java",
-        "PHP",
-        "Bases de Dados",
-        "Node.js",
-        "Spring Boot",
-        ".NET",
-        "Python"
-    ]
+    "skills": ["Java", "PHP", "Bases de Dados", "Node.js", "Spring Boot", "OutSystems", "Python"]
 }

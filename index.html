@@ -48,15 +48,10 @@
                 <img src="https://via.placeholder.com/300" alt="João Oliveira" class="w-full h-full object-cover">
             </div>
             <div class="text-center md:text-left">
-                <h2 id="hero-title" class="text-4xl md:text-5xl font-extrabold mb-4 dark:text-white tracking-tight">
-                    ...
-                </h2>
-                <p id="hero-desc" class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
-                    ...
-                </p>
-                    <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
-                        <i class="fa-solid fa-envelope"></i> joao.97.oliveira@gmail.com
-                    </div>
+                <h2 id="hero-title" class="text-4xl md:text-5xl font-extrabold mb-4 dark:text-white tracking-tight"></h2>
+                <p id="hero-desc" class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl"></p>
+                <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
+                    <i class="fa-solid fa-envelope"></i> joao.97.oliveira@gmail.com
                 </div>
                 <div class="mt-8 flex justify-center md:justify-start gap-6">
                     <a href="https://github.com/JChorao" target="_blank" class="text-2xl hover:text-black dark:hover:text-white transition"><i class="fab fa-github"></i></a>
@@ -68,106 +63,74 @@
         <section id="experience" class="mb-24">
             <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
                 <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
-                <span id="exp-title">...</span>
+                <span id="exp-title"></span>
             </h3>
-            <div id="exp-list" class="space-y-12">
-            </div>
+            <div id="exp-list" class="space-y-12"></div>
         </section>
 
         <section id="education" class="mb-24">
             <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
                 <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
-                <span id="edu-title">...</span>
+                <span id="edu-title"></span>
             </h3>
-            <div id="edu-list" class="space-y-12">
-            </div>
+            <div id="edu-list" class="space-y-12"></div>
         </section>
 
         <section id="projects" class="mb-24">
             <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
                 <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
-                <span id="proj-title">...</span>
+                <span id="proj-title"></span>
             </h3>
-            <div id="proj-grid" class="grid md:grid-cols-2 gap-6">
-            </div>
+            <div id="proj-grid" class="grid md:grid-cols-2 gap-6"></div>
         </section>
 
         <section id="skills" class="mb-24">
             <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
                 <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
-                <span id="skills-title">...</span>
+                <span id="skills-title"></span>
             </h3>
-            <div id="skills-list" class="flex flex-wrap justify-center gap-4">
-            </div>
+            <div id="skills-list" class="flex flex-wrap justify-center gap-4"></div>
         </section>
 
         <section id="contact" class="mb-10 mt-32 flex flex-col items-center justify-center text-center">
             <h3 class="text-2xl font-bold mb-6 flex items-center justify-center dark:text-white">
-                <span id="contact-title">...</span>
+                <span id="contact-title"></span>
             </h3>
-            <p id="contact-desc" class="text-gray-600 dark:text-zinc-400 mb-8 max-w-lg">
-                ...
-            </p>
-            <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#005582] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-200">
+            <p id="contact-desc" class="text-gray-600 dark:text-zinc-400 mb-8 max-w-lg"></p>
+            <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#005582] transition-colors shadow-lg">
                 <i class="fab fa-linkedin text-2xl"></i>
-                <span id="contact-btn">...</span>
+                <span id="contact-btn"></span>
             </a>
         </section>
     </main>
 
+    <div id="projects-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-6">
+        <div id="projects-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
+        <div class="relative w-full max-w-2xl bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800">
+            <h3 id="sub-projects-title" class="text-2xl font-bold mb-6 dark:text-white">Personal GitHub Projects</h3>
+            <div id="sub-projects-list" class="space-y-4"></div>
+            <button id="close-projects" class="mt-8 w-full py-3 rounded-2xl bg-gray-100 dark:bg-zinc-800 font-bold hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">Fechar</button>
+        </div>
+    </div>
+
     <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
-        <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all active:scale-95">
+        <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all">
             <i class="fa-solid fa-bars"></i>
             <span id="menu-label">MENU</span>
         </button>
     </div>
 
-    <div id="menu-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6">
-        <div id="modal-overlay" class="absolute inset-0 bg-black/40 dark:bg-black/90 backdrop-blur-sm"></div>
-        <div class="relative w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800 transform scale-95 transition-transform">
-            <nav class="grid grid-cols-2 gap-4">
-                <a href="#about" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-user mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-about">Sobre</span>
-                </a>
-                <a href="#experience" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-briefcase mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-work">Trabalho</span>
-                </a>
-                <a href="#education" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-graduation-cap mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-education">Educação</span>
-                </a>
-                <a href="#projects" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-projects">Projetos</span>
-                </a>
-                <a href="#skills" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-laptop-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-skills">Skills</span>
-                </a>
-                <a href="#contact" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
-                    <i class="fa-solid fa-envelope mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-contact">Contactos</span>
-                </a>
-            </nav>
-        </div>
-    </div>
-
     <script>
-        let currentLang = 'en'; // Alterado de 'pt' para 'en'
+        let currentLang = 'en';
         let contentData = {};
 
         async function loadLanguage(lang) {
             try {
                 const response = await fetch(`lang/${lang}.json`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
                 contentData[lang] = await response.json();
                 if (currentLang === lang) updateContent();
             } catch (error) {
-                console.error("Erro ao carregar o ficheiro de idioma:", error);
+                console.error("Erro ao carregar idioma:", error);
             }
         }
 
@@ -185,18 +148,23 @@
             document.getElementById('contact-desc').textContent = data.contactDesc;
             document.getElementById('contact-btn').textContent = data.contactBtn;
             document.getElementById('menu-label').textContent = data.menuLabel;
-            
-            // Update Nav
-            document.querySelector('[data-key="nav-about"]').textContent = data.nav.about;
-            document.querySelector('[data-key="nav-work"]').textContent = data.nav.work;
-            document.querySelector('[data-key="nav-education"]').textContent = data.nav.education;
-            document.querySelector('[data-key="nav-projects"]').textContent = data.nav.projects;
-            document.querySelector('[data-key="nav-skills"]').textContent = data.nav.skills;
-            document.querySelector('[data-key="nav-contact"]').textContent = data.nav.contact;
 
-            // Render Experience
-            const expList = document.getElementById('exp-list');
-            expList.innerHTML = data.experiences.map(exp => `
+            const projGrid = document.getElementById('proj-grid');
+            projGrid.innerHTML = data.projects.map((proj, index) => {
+                const action = proj.subProjects ? `onclick="openSubProjects(${index})"` : `onclick="window.open('${proj.link}', '_blank')"`;
+                return `
+                    <div ${action} class="cursor-pointer bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/30 dark:border-blue-400/30 shadow-lg hover:scale-[1.02] transition-all group relative">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">${proj.tag}</div>
+                        <h4 class="font-bold text-lg dark:text-zinc-100 group-hover:text-blue-600 transition-colors">${proj.title}</h4>
+                        <p class="text-gray-600 dark:text-zinc-400 text-sm mt-3 leading-relaxed">${proj.desc}</p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            ${proj.techs.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${exp.date}</div>
                     <div class="md:w-3/4">
@@ -207,9 +175,7 @@
                 </div>
             `).join('');
 
-            // Render Education
-            const eduList = document.getElementById('edu-list');
-            eduList.innerHTML = data.education.map(edu => `
+            document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${edu.date}</div>
                     <div class="md:w-3/4">
@@ -219,60 +185,49 @@
                 </div>
             `).join('');
 
-            // Render Projects
-            const projGrid = document.getElementById('proj-grid');
-            projGrid.innerHTML = data.projects.map(proj => `
-                <div class="bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/30 dark:border-blue-400/30 shadow-lg hover:scale-[1.02] transition-all group relative">
-                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">${proj.tag}</div>
-                    <h4 class="font-bold text-lg dark:text-zinc-100 group-hover:text-blue-600 transition-colors">${proj.title}</h4>
-                    <p class="text-gray-600 dark:text-zinc-400 text-sm mt-3 leading-relaxed">${proj.desc}</p>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        ${proj.techs.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">${t}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-
-            // Render Skills
-            const skillsList = document.getElementById('skills-list');
-            skillsList.innerHTML = data.skills.map(skill => `
-                <div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium shadow-sm transition-transform hover:-translate-y-1">
+            document.getElementById('skills-list').innerHTML = data.skills.map(skill => `
+                <div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium shadow-sm">
                     ${skill}
                 </div>
             `).join('');
         }
 
-        // Toggles
+        function openSubProjects(index) {
+            const data = contentData[currentLang].projects[index];
+            const list = document.getElementById('sub-projects-list');
+            list.innerHTML = data.subProjects.map(sub => `
+                <a href="${sub.link}" target="_blank" class="block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group">
+                    <div class="flex justify-between items-center">
+                        <h5 class="font-bold dark:text-white group-hover:text-blue-500">${sub.title}</h5>
+                        <i class="fa-solid fa-external-link text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">${sub.desc}</p>
+                    <div class="flex gap-2 mt-2">
+                        ${sub.techs.map(t => `<span class="text-[10px] text-blue-500 font-mono">${t}</span>`).join('')}
+                    </div>
+                </a>
+            `).join('');
+            document.getElementById('projects-modal').classList.remove('hidden');
+        }
+
+        document.getElementById('close-projects').addEventListener('click', () => {
+            document.getElementById('projects-modal').classList.add('hidden');
+        });
+
         document.getElementById('lang-toggle').addEventListener('click', () => {
             currentLang = currentLang === 'pt' ? 'en' : 'pt';
-            if (contentData[currentLang]) {
-                updateContent();
-            } else {
-                loadLanguage(currentLang);
-            }
+            updateContent();
         });
 
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        themeToggle.addEventListener('click', () => {
+        document.getElementById('theme-toggle').addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
-            themeIcon.classList.toggle('fa-moon');
-            themeIcon.classList.toggle('fa-sun');
+            const icon = document.getElementById('theme-icon');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
         });
 
-        // Modal Logic
-        const menuBtn = document.getElementById('menu-btn');
-        const menuModal = document.getElementById('menu-modal');
-        const overlay = document.getElementById('modal-overlay');
-        const toggleModal = () => {
-            menuModal.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
-        };
-        [menuBtn, overlay].forEach(el => el.addEventListener('click', toggleModal));
-        document.querySelectorAll('.menu-link').forEach(link => link.addEventListener('click', toggleModal));
-
-        // Initial Load
-        loadLanguage('en'); // Mantém o carregamento do inglês
-        loadLanguage('pt'); // Mantém o carregamento do português também para quando trocares
+        loadLanguage('en');
+        loadLanguage('pt');
     </script>
 </body>
 </html>

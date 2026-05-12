@@ -6,7 +6,7 @@
     "projTitle": "Projects",
     "skillsTitle": "Technical Skills",
     "contactTitle": "Contact Me",
-    "contactDesc": "I'm always open to new opportunities and collaborations. Feel free to reach out to me via LinkedIn!",
+    "contactDesc": "I'm always open to new opportunities and collaborations. Feel free to reach out via LinkedIn!",
     "contactBtn": "Contact on LinkedIn",
     "menuLabel": "MENU",
     "nav": {
@@ -22,13 +22,13 @@
             "date": "Jul 2024",
             "role": "Summer Intern",
             "company": "Babel",
-            "desc": "Development of an e-commerce platform using OutSystems, focused on business logic and database integration."
+            "desc": "E-commerce platform development using OutSystems, focusing on business logic and database integration."
         },
         {
             "date": "Mar 2022 - Jul 2022",
             "role": "Intern",
             "company": "INTROSYS",
-            "desc": "Developed a REST API using .NET, focused on backend architecture and DB communication."
+            "desc": "Development of a REST API using Node.js, focusing on backend architecture and DB communication."
         }
     ],
     "education": [
@@ -39,7 +39,7 @@
         },
         {
             "date": "2020 - 2023",
-            "degree": "Associate Degree, Information Systems Technology and Programming",
+            "degree": "Associate Degree, IS Technology and Programming",
             "school": "Instituto Politécnico de Castelo Branco"
         }
     ],
@@ -47,31 +47,36 @@
         {
             "title": "VitraeWindow",
             "tag": "Final Project",
-            "desc": "Turning standard windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time content management.",
-            "techs": [
-                "Raspberry Pi",
-                "Firebase",
-                "Hardware Integration"
-            ]
+            "link": "https://github.com/JChorao/VitraeWindow",
+            "desc": "Turning windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time management.",
+            "techs": ["Raspberry Pi", "Firebase", "Hardware"]
         },
         {
             "title": "Personal GitHub Projects",
             "tag": "Github",
-            "desc": "Collection of academic and personal projects involving backend systems, APIs, and Java solutions.",
-            "techs": [
-                "Java",
-                "Spring Boot",
-                "Node.js"
+            "desc": "A collection of projects focused on APIs, data monitoring, and game logic.",
+            "techs": ["Node.js", "Java", "Express"],
+            "subProjects": [
+                {
+                    "title": "RestAPI",
+                    "link": "https://github.com/JChorao/RestAPI",
+                    "desc": "Robust data manipulation interface using Azure and Swagger.",
+                    "techs": ["Node.js", "Express", "Azure"]
+                },
+                {
+                    "title": "CryptoTracker",
+                    "link": "https://github.com/JChorao/CryptoTracker",
+                    "desc": "Real-time cryptocurrency price monitoring application.",
+                    "techs": ["Node.js", "Express", "Crypto API"]
+                },
+                {
+                    "title": "ESTouro",
+                    "link": "https://github.com/JChorao/ESTouro",
+                    "desc": "Strategy game developed in Java using Design Patterns.",
+                    "techs": ["Java", "OOP", "Game Logic"]
+                }
             ]
         }
     ],
-    "skills": [
-        "Java",
-        "PHP",
-        "Databases",
-        "Node.js",
-        "Spring Boot",
-        ".NET",
-        "Python"
-    ]
+    "skills": ["Java", "PHP", "Databases", "Node.js", "Spring Boot", "OutSystems", "Python"]
 }

@@ -103,11 +103,10 @@
     </main>
 
     <div id="projects-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-6">
-        <div id="projects-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
+        <div id="projects-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer"></div>
         <div class="relative w-full max-w-2xl bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800">
             <h3 id="sub-projects-title" class="text-2xl font-bold mb-6 dark:text-white">Personal GitHub Projects</h3>
             <div id="sub-projects-list" class="space-y-4"></div>
-            <button id="close-projects" class="mt-8 w-full py-3 rounded-2xl bg-gray-100 dark:bg-zinc-800 font-bold hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors">Fechar</button>
         </div>
     </div>
 
@@ -237,7 +236,7 @@
             document.getElementById('projects-modal').classList.remove('hidden');
         }
 
-        document.getElementById('close-projects').addEventListener('click', () => {
+        document.getElementById('projects-overlay').addEventListener('click', () => {
             document.getElementById('projects-modal').classList.add('hidden');
         });
 

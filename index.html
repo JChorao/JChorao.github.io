@@ -32,9 +32,7 @@
         </h1>
 
         <div class="flex items-center gap-4">
-            <button id="lang-toggle" class="text-sm font-bold hover:text-blue-600 transition dark:text-zinc-400 dark:hover:text-white">
-                EN / PT
-            </button>
+            <button id="lang-toggle" class="text-sm font-bold hover:text-blue-600 transition dark:text-zinc-400 dark:hover:text-white"></button>
 
             <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition" aria-label="Toggle Dark Mode">
                 <i id="theme-icon" class="fa-solid fa-moon"></i>
@@ -115,41 +113,15 @@
 
     <div id="nav-menu" class="fixed inset-0 z-[80] hidden items-center justify-center p-4">
         <div id="close-menu" class="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"></div>
-        
         <div class="relative w-[90%] md:w-[40%] bg-[#18181b] rounded-[2rem] p-6 shadow-2xl border border-white/5">
-            <nav class="grid grid-cols-2 gap-4">
-                <a href="#about" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-user text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-about" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-                <a href="#experience" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-briefcase text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-work" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-                <a href="#education" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-graduation-cap text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-education" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-                <a href="#projects" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-code text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-projects" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-                <a href="#skills" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-laptop-code text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-skills" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-                <a href="#contact" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
-                    <i class="fa-solid fa-envelope text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
-                    <span id="nav-contact" class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors"></span>
-                </a>
-            </nav>
+            <nav id="nav-menu-grid" class="grid grid-cols-2 gap-4"></nav>
         </div>
     </div>
 
     <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
         <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all">
             <i class="fa-solid fa-bars"></i>
-            <span id="menu-label">MENU</span>
+            <span id="menu-label"></span>
         </button>
     </div>
 
@@ -171,6 +143,7 @@
             const data = contentData[currentLang];
             if (!data) return;
 
+            // Textos Base e novos rótulos
             document.getElementById('hero-title').textContent = data.heroTitle;
             document.getElementById('hero-desc').textContent = data.heroDesc;
             document.getElementById('exp-title').textContent = data.expTitle;
@@ -181,17 +154,27 @@
             document.getElementById('contact-desc').textContent = data.contactDesc;
             document.getElementById('contact-btn').textContent = data.contactBtn;
             document.getElementById('menu-label').textContent = data.menuLabel;
+            document.getElementById('lang-toggle').textContent = data.langLabel; // Atualiza o botão de língua
 
-            // Traduções do Menu de Navegação
-            document.getElementById('nav-about').textContent = data.nav.about;
-            document.getElementById('nav-work').textContent = data.nav.work;
-            document.getElementById('nav-education').textContent = data.nav.education;
-            document.getElementById('nav-projects').textContent = data.nav.projects;
-            document.getElementById('nav-skills').textContent = data.nav.skills;
-            document.getElementById('nav-contact').textContent = data.nav.contact;
+            // Grelha do Menu
+            const menuItems = [
+                { id: 'about', icon: 'fa-user', text: data.nav.about },
+                { id: 'experience', icon: 'fa-briefcase', text: data.nav.work },
+                { id: 'education', icon: 'fa-graduation-cap', text: data.nav.education },
+                { id: 'projects', icon: 'fa-code', text: data.nav.projects },
+                { id: 'skills', icon: 'fa-laptop-code', text: data.nav.skills },
+                { id: 'contact', icon: 'fa-envelope', text: data.nav.contact }
+            ];
 
-            const projGrid = document.getElementById('proj-grid');
-            projGrid.innerHTML = data.projects.map((proj, index) => {
+            document.getElementById('nav-menu-grid').innerHTML = menuItems.map(item => `
+                <a href="#${item.id}" class="menu-link flex flex-col items-center justify-center py-8 bg-[#27272a] hover:bg-[#3f3f46] rounded-2xl transition-all group">
+                    <i class="fa-solid ${item.icon} text-3xl mb-3 text-zinc-400 group-hover:text-white transition-colors"></i>
+                    <span class="text-sm font-bold text-zinc-400 group-hover:text-white transition-colors">${item.text}</span>
+                </a>
+            `).join('');
+
+            // Projetos
+            document.getElementById('proj-grid').innerHTML = data.projects.map((proj, index) => {
                 const action = proj.subProjects ? `onclick="openSubProjects(${index})"` : `onclick="window.open('${proj.link}', '_blank')"`;
                 return `
                     <div ${action} class="cursor-pointer bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/30 dark:border-blue-400/30 shadow-lg hover:scale-[1.02] transition-all group relative">
@@ -205,6 +188,7 @@
                 `;
             }).join('');
 
+            // Experiência
             document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${exp.date}</div>
@@ -216,6 +200,7 @@
                 </div>
             `).join('');
 
+            // Educação
             document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${edu.date}</div>
@@ -226,6 +211,7 @@
                 </div>
             `).join('');
 
+            // Skills
             document.getElementById('skills-list').innerHTML = data.skills.map(skill => `
                 <div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium shadow-sm">
                     ${skill}
@@ -267,25 +253,17 @@
             icon.classList.toggle('fa-sun');
         });
 
-        // Lógica para o Menu de Navegação
+        // Lógica do Menu
         const navMenu = document.getElementById('nav-menu');
-        
         function toggleMenu() {
-            if (navMenu.classList.contains('hidden')) {
-                navMenu.classList.remove('hidden');
-                navMenu.classList.add('flex');
-            } else {
-                navMenu.classList.add('hidden');
-                navMenu.classList.remove('flex');
-            }
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
         }
 
         document.getElementById('menu-btn').addEventListener('click', toggleMenu);
-        document.getElementById('close-menu').addEventListener('click', toggleMenu); // Fechar ao clicar no fundo
-
-        // Fecha o menu ao clicar num dos links
-        document.querySelectorAll('.menu-link').forEach(link => {
-            link.addEventListener('click', toggleMenu);
+        document.getElementById('close-menu').addEventListener('click', toggleMenu);
+        document.getElementById('nav-menu-grid').addEventListener('click', (e) => {
+            if (e.target.closest('.menu-link')) toggleMenu();
         });
 
         loadLanguage('en');

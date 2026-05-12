@@ -9,6 +9,7 @@
     "contactDesc": "I'm always open to new opportunities and collaborations. Feel free to reach out via LinkedIn!",
     "contactBtn": "Contact on LinkedIn",
     "menuLabel": "MENU",
+    "langLabel": "EN / PT",
     "nav": {
         "about": "About",
         "work": "Work",
@@ -52,7 +53,7 @@
             "techs": ["Raspberry Pi", "Firebase", "Hardware"]
         },
         {
-            "title": "School Projects",
+            "title": "Personal GitHub Projects",
             "tag": "Github",
             "desc": "A collection of projects focused on APIs, data monitoring, and game logic.",
             "techs": ["Node.js", "Java", "Express"],
@@ -78,5 +79,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Databases", "Node.js", "Spring Boot", "Python"]
+    "skills": ["Java", "PHP", "Databases", "Node.js", "Spring Boot", "OutSystems", "Python"]
 }

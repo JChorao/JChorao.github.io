@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="pt" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Oliveira | Portfolio</title>
+    <meta name="description" content="João Oliveira - Computer Engineering Student and Software Developer Portfolio">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    colors: {
+                        'charcoal': '#121212',
+                        'soft-beige': '#F5F5DC',
+                    },
                     backdropBlur: { xs: '2px' }
                 }
             }
@@ -17,28 +23,37 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 dark:bg-zinc-950 text-gray-800 dark:text-zinc-200 font-sans transition-colors duration-300">
 
-    <!-- Header -->
-    <header class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center text-left">
-        <h1 class="text-xl font-bold tracking-tighter dark:text-white uppercase">João Oliveira</h1>
-        <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition">
-            <i id="theme-icon" class="fa-solid fa-moon dark:fa-sun"></i>
-        </button>
+<body class="bg-[#F5F5DC] dark:bg-[#121212] text-gray-800 dark:text-zinc-200 font-sans transition-colors duration-300">
+
+    <header class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-tighter dark:text-white uppercase">
+            João Oliveira
+        </h1>
+
+        <div class="flex items-center gap-4">
+            <button id="lang-toggle" class="text-sm font-bold hover:text-blue-600 transition dark:text-zinc-400 dark:hover:text-white">
+                EN / PT
+            </button>
+
+            <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition" aria-label="Toggle Dark Mode">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+        </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 pb-40 text-left">
-        <!-- About Section -->
+    <main class="max-w-5xl mx-auto px-6 pb-40">
         <section id="about" class="flex flex-col md:flex-row items-center gap-12 mb-24 pt-10">
             <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-2xl flex-shrink-0">
-                <img src="https://via.placeholder.com/150" alt="João Oliveira" class="w-full h-full object-cover">
+                <img src="https://via.placeholder.com/300" alt="João Oliveira" class="w-full h-full object-cover">
             </div>
             <div class="text-center md:text-left">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 dark:text-white tracking-tight">Computer Engineer & Developer</h2>
-                <p class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
-                    Dedicated to building efficient software solutions and optimizing systems. Currently refining my skills through a BSc in Computer Engineering at IPCB.
+                <h2 id="hero-title" class="text-4xl md:text-5xl font-extrabold mb-4 dark:text-white tracking-tight">
+                    Engenheiro Informático & Developer
+                </h2>
+                <p id="hero-desc" class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
+                    Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.
                 </p>
-                
                 <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-zinc-500">
                     <div class="flex items-center justify-center md:justify-start gap-3">
                         <i class="fa-solid fa-phone"></i> +351 934 746 813
@@ -47,7 +62,6 @@
                         <i class="fa-solid fa-envelope"></i> joao.97.oliveira@gmail.com
                     </div>
                 </div>
-
                 <div class="mt-8 flex justify-center md:justify-start gap-6">
                     <a href="https://github.com/JChorao" target="_blank" class="text-2xl hover:text-black dark:hover:text-white transition"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="text-2xl hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
@@ -55,118 +69,249 @@
             </div>
         </section>
 
-        <!-- Experience Section (Fixed Design: Removed hover confusion) -->
         <section id="experience" class="mb-24">
             <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
-                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span> Experience
+                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
+                <span id="exp-title">Experiência</span>
             </h3>
-            <div class="space-y-12">
-                <div class="flex flex-col md:flex-row md:gap-8">
-                    <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">Jul 2024 - Present</div>
-                    <div class="md:w-3/4">
-                        <h4 class="text-xl font-bold dark:text-zinc-100">Summer Intern</h4>
-                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">Babel</p>
-                        <p class="text-sm text-gray-500 italic">Castelo Branco, Portugal</p>
-                    </div>
+            <div id="exp-list" class="space-y-12">
                 </div>
-                <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8">
-                    <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">Mar 2022 - Jul 2022</div>
-                    <div class="md:w-3/4">
-                        <h4 class="text-xl font-bold dark:text-zinc-100">Intern</h4>
-                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">INTROSYS</p>
-                        <p class="text-gray-600 dark:text-zinc-400 leading-relaxed text-sm">Curricular internship associated with the Associate Degree (TeSP) in Information Systems.</p>
-                    </div>
+        </section>
+
+        <section id="projects" class="mb-24">
+            <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
+                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
+                <span id="proj-title">Projetos</span>
+            </h3>
+            <div id="proj-grid" class="grid md:grid-cols-2 gap-6">
                 </div>
+        </section>
+
+        <section id="skills" class="mb-24">
+            <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
+                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span>
+                <span id="skills-title">Competências Técnicas</span>
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">Java</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">PHP</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">Databases</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">Node.js</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">Spring Boot</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">.NET</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">Python</div>
+                <div class="bg-white dark:bg-zinc-900 p-5 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium">OutSystems</div>
             </div>
         </section>
 
-        <!-- Education Section (Added Clickable Links) -->
-        <section id="education" class="mb-24">
-            <h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white">
-                <span class="w-8 h-1 bg-black dark:bg-white mr-4"></span> Education
+        <section id="contact" class="mb-10 mt-32 flex flex-col items-center justify-center text-center">
+            <h3 class="text-2xl font-bold mb-6 flex items-center justify-center dark:text-white">
+                <span id="contact-title">Contactos</span>
             </h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Licenciatura Link -->
-                <a href="https://www.ipcb.pt/estudar/cursos/licenciatura/licenciatura-em-engenharia-informatica/" target="_blank" class="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-blue-500 transition-all group">
-                    <h4 class="font-bold text-lg dark:text-zinc-100 group-hover:text-blue-600 transition-colors">BSc, Computer Engineering</h4>
-                    <p class="text-blue-600 dark:text-blue-400 text-sm">IPCB</p>
-                    <p class="text-gray-400 text-[10px] mt-4 uppercase font-bold tracking-widest">2023 – Present</p>
-                </a>
-                <!-- TeSP Link -->
-                <a href="https://www.ipcb.pt/estudar/cursos/ctesp/curso-tecnico-superior-profissional-em-tecnologias-e-programacao-de-sistemas-de-informacao/" target="_blank" class="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-blue-500 transition-all group">
-                    <h4 class="font-bold text-lg dark:text-zinc-100 leading-tight group-hover:text-blue-600 transition-colors">Associate Degree, Information Systems</h4>
-                    <p class="text-blue-600 dark:text-blue-400 text-sm">IPCB</p>
-                    <p class="text-gray-400 text-[10px] mt-4 uppercase font-bold tracking-widest">2020 – 2023</p>
-                </a>
-            </div>
+            <p id="contact-desc" class="text-gray-600 dark:text-zinc-400 mb-8 max-w-lg">
+                Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me contactar através do LinkedIn!
+            </p>
+            <a href="https://linkedin.com/in/joao-oliveira-4462b2231" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#005582] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-200">
+                <i class="fab fa-linkedin text-2xl"></i>
+                <span id="contact-btn">Contactar no LinkedIn</span>
+            </a>
         </section>
     </main>
 
-    <!-- Floating Menu Button -->
-    <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none text-left">
+    <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
         <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all active:scale-95">
             <i class="fa-solid fa-layer-group"></i>
-            <span>MENU</span>
+            <span id="menu-label">MENU</span>
         </button>
     </div>
 
-    <!-- Navigation Modal -->
-    <div id="menu-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6 text-left">
+    <div id="menu-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6">
         <div id="modal-overlay" class="absolute inset-0 bg-black/40 dark:bg-black/90 backdrop-blur-sm"></div>
-        <div class="relative w-[40%] min-w-[280px] max-w-[450px] bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800 transform scale-95 transition-transform">
-            <div class="flex justify-between items-center mb-8 px-2 text-left">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Navigation</span>
-                <button id="close-btn" class="text-gray-400 hover:text-black dark:hover:text-white transition"><i class="fa-solid fa-xmark text-xl"></i></button>
-            </div>
+        <div class="relative w-full max-w-md bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800 transform scale-95 transition-transform">
             <nav class="grid grid-cols-2 gap-4">
-                <a href="#about" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
+                <a href="#about" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
                     <i class="fa-solid fa-user mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200 text-left">About</span>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-about">Sobre</span>
                 </a>
-                <a href="#experience" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
+                <a href="#experience" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
                     <i class="fa-solid fa-briefcase mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200 text-left">Work</span>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-work">Trabalho</span>
                 </a>
-                <a href="#education" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] border border-transparent hover:border-blue-500 transition-all group active:scale-90">
-                    <i class="fa-solid fa-graduation-cap mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                    <span class="text-[11px] font-bold dark:text-zinc-200 text-left">Studies</span>
+                <a href="#projects" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
+                    <i class="fa-solid fa-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-projects">Projetos</span>
                 </a>
-                <a href="mailto:joao.97.oliveira@gmail.com" class="menu-link flex flex-col items-center justify-center aspect-square bg-blue-600 rounded-[2rem] hover:bg-blue-700 transition-all active:scale-90 shadow-xl shadow-blue-500/20">
-                    <i class="fa-solid fa-envelope mb-3 text-3xl text-white"></i>
-                    <span class="text-[11px] font-bold text-white text-left">Contact</span>
+                <a href="#skills" class="menu-link flex flex-col items-center justify-center aspect-square bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
+                    <i class="fa-solid fa-laptop-code mb-3 text-3xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-skills">Skills</span>
+                </a>
+                <a href="#contact" class="menu-link col-span-2 flex flex-col items-center justify-center py-6 bg-gray-50 dark:bg-zinc-800/50 rounded-[2rem] hover:border-blue-500 transition-all group">
+                    <i class="fa-solid fa-envelope mb-2 text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="text-[11px] font-bold dark:text-zinc-200" data-key="nav-contact">Contactos</span>
                 </a>
             </nav>
         </div>
     </div>
 
     <script>
+        const content = {
+            pt: {
+                heroTitle: "Engenheiro Informático & Developer",
+                heroDesc: "Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.",
+                expTitle: "Experiência",
+                projTitle: "Projetos",
+                skillsTitle: "Competências Técnicas",
+                contactTitle: "Contactos",
+                contactDesc: "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me contactar através do LinkedIn!",
+                contactBtn: "Contactar no LinkedIn",
+                menuLabel: "MENU",
+                nav: { about: "Sobre", work: "Trabalho", projects: "Projetos", skills: "Skills", contact: "Contactos" },
+                experiences: [
+                    {
+                        date: "Jul 2024 - Presente",
+                        role: "Estagiário de Verão",
+                        company: "Babel",
+                        desc: "Desenvolvimento de plataforma e-commerce em OutSystems, focada em lógica de negócio e integração de bases de dados."
+                    },
+                    {
+                        date: "Mar 2022 - Jul 2022",
+                        role: "Estagiário",
+                        company: "INTROSYS",
+                        desc: "Desenvolvimento de REST API com .NET, focada em arquitetura backend e comunicação com BD."
+                    }
+                ],
+                projects: [
+                    {
+                        title: "VitraeWindow",
+                        tag: "Projeto Final",
+                        desc: "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão de conteúdos em tempo real.",
+                        techs: ["Raspberry Pi", "Firebase", "Hardware Integration"]
+                    },
+                    {
+                        title: "Projetos Pessoais GitHub",
+                        tag: "Github",
+                        desc: "Coleção de projetos académicos e pessoais envolvendo sistemas backend, APIs e soluções Java.",
+                        techs: ["Java", "Spring Boot", "Node.js"]
+                    }
+                ]
+            },
+            en: {
+                heroTitle: "Computer Engineer & Developer",
+                heroDesc: "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills through a BSc in Computer Engineering at IPCB.",
+                expTitle: "Experience",
+                projTitle: "Projects",
+                skillsTitle: "Technical Skills",
+                contactTitle: "Contact Me",
+                contactDesc: "I'm always open to new opportunities and collaborations. Feel free to reach out to me via LinkedIn!",
+                contactBtn: "Contact on LinkedIn",
+                menuLabel: "MENU",
+                nav: { about: "About", work: "Work", projects: "Projects", skills: "Skills", contact: "Contact" },
+                experiences: [
+                    {
+                        date: "Jul 2024 - Present",
+                        role: "Summer Intern",
+                        company: "Babel",
+                        desc: "Development of an e-commerce platform using OutSystems, focused on business logic and database integration."
+                    },
+                    {
+                        date: "Mar 2022 - Jul 2022",
+                        role: "Intern",
+                        company: "INTROSYS",
+                        desc: "Developed a REST API using .NET, focused on backend architecture and DB communication."
+                    }
+                ],
+                projects: [
+                    {
+                        title: "VitraeWindow",
+                        tag: "Final Project",
+                        desc: "Turning standard windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time content management.",
+                        techs: ["Raspberry Pi", "Firebase", "Hardware Integration"]
+                    },
+                    {
+                        title: "Personal GitHub Projects",
+                        tag: "Github",
+                        desc: "Collection of academic and personal projects involving backend systems, APIs, and Java solutions.",
+                        techs: ["Java", "Spring Boot", "Node.js"]
+                    }
+                ]
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function updateContent() {
+            const data = content[currentLang];
+            document.getElementById('hero-title').textContent = data.heroTitle;
+            document.getElementById('hero-desc').textContent = data.heroDesc;
+            document.getElementById('exp-title').textContent = data.expTitle;
+            document.getElementById('proj-title').textContent = data.projTitle;
+            document.getElementById('skills-title').textContent = data.skillsTitle;
+            document.getElementById('contact-title').textContent = data.contactTitle;
+            document.getElementById('contact-desc').textContent = data.contactDesc;
+            document.getElementById('contact-btn').textContent = data.contactBtn;
+            document.getElementById('menu-label').textContent = data.menuLabel;
+            
+            // Update Nav
+            document.querySelector('[data-key="nav-about"]').textContent = data.nav.about;
+            document.querySelector('[data-key="nav-work"]').textContent = data.nav.work;
+            document.querySelector('[data-key="nav-projects"]').textContent = data.nav.projects;
+            document.querySelector('[data-key="nav-skills"]').textContent = data.nav.skills;
+            document.querySelector('[data-key="nav-contact"]').textContent = data.nav.contact;
+
+            // Render Experience
+            const expList = document.getElementById('exp-list');
+            expList.innerHTML = data.experiences.map(exp => `
+                <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
+                    <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${exp.date}</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-xl font-bold dark:text-zinc-100">${exp.role}</h4>
+                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">${exp.company}</p>
+                        <p class="text-gray-600 dark:text-zinc-400 leading-relaxed text-sm">${exp.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Projects
+            const projGrid = document.getElementById('proj-grid');
+            projGrid.innerHTML = data.projects.map(proj => `
+                <div class="bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/30 dark:border-blue-400/30 shadow-lg hover:scale-[1.02] transition-all group relative">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">${proj.tag}</div>
+                    <h4 class="font-bold text-lg dark:text-zinc-100 group-hover:text-blue-600 transition-colors">${proj.title}</h4>
+                    <p class="text-gray-600 dark:text-zinc-400 text-sm mt-3 leading-relaxed">${proj.desc}</p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        ${proj.techs.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">${t}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggles
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            updateContent();
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            themeIcon.classList.toggle('fa-moon');
+            themeIcon.classList.toggle('fa-sun');
+        });
+
+        // Modal Logic
         const menuBtn = document.getElementById('menu-btn');
         const menuModal = document.getElementById('menu-modal');
-        const closeBtn = document.getElementById('close-btn');
         const overlay = document.getElementById('modal-overlay');
-        const links = document.querySelectorAll('.menu-link');
-
-        function toggleModal() {
+        const toggleModal = () => {
             menuModal.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
-        }
+        };
+        [menuBtn, overlay].forEach(el => el.addEventListener('click', toggleModal));
+        document.querySelectorAll('.menu-link').forEach(link => link.addEventListener('click', toggleModal));
 
-        menuBtn.addEventListener('click', toggleModal);
-        closeBtn.addEventListener('click', toggleModal);
-        overlay.addEventListener('click', toggleModal);
-        links.forEach(link => link.addEventListener('click', toggleModal));
-
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const themeIcon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-            } else {
-                html.classList.add('dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            }
-        }
+        // Initial Load
+        updateContent();
     </script>
 </body>
 </html>

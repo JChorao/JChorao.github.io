@@ -29,7 +29,7 @@
             "date": "Mar 2022 - Jul 2022",
             "role": "Intern",
             "company": "INTROSYS",
-            "desc": "Development of a REST API using Node.js, focusing on backend architecture and DB communication."
+            "desc": "Development of a REST API using .NET, focusing on backend architecture and DB communication."
         }
     ],
     "education": [
@@ -53,7 +53,7 @@
             "techs": ["Raspberry Pi", "Firebase", "Hardware"]
         },
         {
-            "title": "Personal GitHub Projects",
+            "title": "Academic Projects",
             "tag": "Github",
             "desc": "A collection of projects focused on APIs, data monitoring, and game logic.",
             "techs": ["Node.js", "Java", "Express"],
@@ -79,5 +79,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Databases", "Node.js", "Spring Boot", "Python"]
+    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "Json"]
 }

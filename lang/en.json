@@ -1,15 +1,15 @@
 {
     "heroTitle": "Developer",
-    "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills through a BSc in Computer Engineering at IPCB.",
+    "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills in the Computer Engineering Bachelor's Degree at IPCB.",
     "expTitle": "Experience",
     "eduTitle": "Education",
     "projTitle": "Projects",
     "skillsTitle": "Technical Skills",
-    "contactTitle": "Contact Me",
-    "contactDesc": "I'm always open to new opportunities and collaborations. Feel free to reach out via LinkedIn!",
+    "contactTitle": "Contact",
+    "contactDesc": "I am always open to new opportunities and collaborations. Feel free to contact me via LinkedIn!",
     "contactBtn": "Contact on LinkedIn",
     "menuLabel": "MENU",
-    "langLabel": "EN / PT",
+    "langLabel": "PT / EN",
     "nav": {
         "about": "About",
         "work": "Work",
@@ -23,58 +23,77 @@
             "date": "Jul 2024",
             "role": "Summer Intern",
             "company": "Babel",
-            "desc": "E-commerce platform development using OutSystems, focusing on business logic and database integration."
+            "desc": "Development of an e-commerce platform in OutSystems, focused on business logic and database integration."
         },
         {
             "date": "Mar 2022 - Jul 2022",
             "role": "Intern",
             "company": "INTROSYS",
-            "desc": "Development of a REST API using .NET, focusing on backend architecture and DB communication."
+            "desc": "REST API development with .NET, focused on backend architecture and database communication."
         }
     ],
     "education": [
         {
-            "date": "2023 - Current",
-            "degree": "BSc, Computer Engineering",
-            "school": "Instituto Politécnico de Castelo Branco"
+            "date": "2023 - Present",
+            "degree": "Bachelor's in Computer Engineering",
+            "school": "Polytechnic Institute of Castelo Branco"
         },
         {
             "date": "2020 - 2023",
-            "degree": "Associate Degree, IS Technology and Programming",
-            "school": "Instituto Politécnico de Castelo Branco"
+            "degree": "CTeSP in Information Systems Programming and Technologies",
+            "school": "Polytechnic Institute of Castelo Branco"
         }
     ],
     "projects": [
         {
-            "title": "VitraeWindow",
+            "title": "VitraeView",
             "tag": "Final Project",
-            "link": "https://github.com/JChorao/VitraeWindow",
-            "desc": "Turning windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time management.",
-            "techs": ["Raspberry Pi", "Firebase", "Hardware"]
+            "desc": "Transformation of windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time management.",
+            "techs": ["Raspberry Pi", "Firebase", "Hardware"],
+            "subProjects": [
+                {
+                    "title": "VitraeView",
+                    "link": "https://github.com/JChorao/",
+                    "desc": "Mobile Application to control VitraeView, using Firebase for real-time communication.",
+                    "techs": ["Firebase", "Flutter", "Mobile"]
+                },
+                {
+                    "title": "VitraeWindow",
+                    "link": "https://github.com/JChorao/VitraeWindow",
+                    "desc": "Window Software, processing data from Raspberry Pi and managing the user interface.",
+                    "techs": ["Firebase", "Python", "Hardware"]
+                }
+            ]
         },
         {
             "title": "Academic Projects",
             "tag": "Github",
-            "desc": "A collection of projects focused on APIs, data monitoring, and game logic.",
+            "desc": "Collection of projects focused on APIs, data monitoring, and game logic.",
             "techs": ["Node.js", "Java", "Express"],
             "subProjects": [
                 {
                     "title": "RestAPI",
                     "link": "https://github.com/JChorao/RestAPI",
-                    "desc": "Robust data manipulation interface using Azure and Swagger.",
+                    "desc": "Robust interface for data manipulation using Azure and Swagger.",
                     "techs": ["Node.js", "Express", "Azure"]
                 },
                 {
                     "title": "CryptoTracker",
                     "link": "https://github.com/JChorao/CryptoTracker",
-                    "desc": "Real-time cryptocurrency price monitoring application.",
+                    "desc": "Real-time cryptocurrency price monitoring.",
                     "techs": ["Node.js", "Express", "Crypto API"]
                 },
                 {
                     "title": "ESTouro",
                     "link": "https://github.com/JChorao/ESTouro",
-                    "desc": "Strategy game developed in Java using Design Patterns.",
+                    "desc": "Strategy game developed in Java applying design patterns.",
                     "techs": ["Java", "OOP", "Game Logic"]
+                },
+                {
+                    "title": "TP_AD",
+                    "link": "https://github.com/JChorao/TP_AD",
+                    "desc": "Distributed vehicle rental system developed in Java using a microservices architecture.",
+                    "techs": ["Java", "Spring Boot", "Microservices", "Docker"]
                 }
             ]
         }

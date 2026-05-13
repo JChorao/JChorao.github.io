@@ -29,7 +29,7 @@
             "date": "Mar 2022 - Jul 2022",
             "role": "Estagiário",
             "company": "INTROSYS",
-            "desc": "Desenvolvimento de REST API com Node.js, focada em arquitetura backend e comunicação com bases de dados."
+            "desc": "Desenvolvimento de REST API com .NET, focada em arquitetura backend e comunicação com bases de dados."
         }
     ],
     "education": [
@@ -46,11 +46,24 @@
     ],
     "projects": [
         {
-            "title": "VitraeWindow",
+            "title": "VitraeView",
             "tag": "Projeto Final",
-            "link": "https://github.com/JChorao/VitraeWindow",
             "desc": "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão em tempo real.",
-            "techs": ["Raspberry Pi", "Firebase", "Hardware"]
+            "techs": ["Raspberry Pi", "Firebase", "Hardware"],
+            "subProjects": [
+                {
+                    "title": "VitraeView",
+                    "link": "https://github.com/JChorao/",
+                    "desc": "Aplicação Movel de Controlar o VitraeView, utilizando Firebase para comunicação em tempo real.",
+                    "techs": ["Firebase", "Flutter", "Mobile"]
+                },
+                {
+                    "title": "VitraeWindow",
+                    "link": "https://github.com/JChorao/VitraeWindow",
+                    "desc": "Software da Janela, processando dados do Raspberry Pi e gerindo a interface do utilizador.",
+                    "techs": ["Firebase", "Python", "Hardware"]
+                }
+            ]
         },
         {
             "title": "Academic Projects",
@@ -75,6 +88,12 @@
                     "link": "https://github.com/JChorao/ESTouro",
                     "desc": "Jogo de estratégia desenvolvido em Java aplicando padrões de desenho.",
                     "techs": ["Java", "OOP", "Game Logic"]
+                },
+                {
+                    "title": "TP_AD",
+                    "link": "https://github.com/JChorao/TP_AD",
+                    "desc": "Sistema distribuído de aluguer de veículos desenvolvido em Java com arquitetura de microsserviços.",
+                    "techs": ["Java", "Spring Boot", "Microservices", "Docker"]
                 }
             ]
         }

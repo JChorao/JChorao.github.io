@@ -9,10 +9,10 @@
     <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#F5F5DC" media="(prefers-color-scheme: light)">
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="Jo.svg">
 
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -20,11 +20,14 @@
 
     <header class="fixed top-0 left-0 right-0 z-40 bg-[#F5F5DC]/80 dark:bg-[#121212]/80 backdrop-blur-md border-b border-transparent dark:border-zinc-800/50 transition-colors duration-300 shadow-sm dark:shadow-none">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tighter dark:text-white uppercase">João Oliveira</h1>
+            <a href="#about" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="Jo.svg" alt="Logo Jo" class="h-8 w-auto">
+                <h1 class="text-xl font-bold tracking-tighter dark:text-white uppercase hidden sm:block">João Oliveira</h1>
+            </a>
             
             <div class="flex items-center gap-6">
                 <button id="lang-toggle" class="text-xs font-bold tracking-widest uppercase py-2 px-3 rounded-lg border border-transparent hover:border-blue-500/30 hover:text-blue-600 transition-all dark:text-zinc-400 dark:hover:text-white">
-                    </button>
+                </button>
 
                 <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition" aria-label="Modo Dark">
                     <i id="theme-icon" class="fa-solid fa-moon"></i>
@@ -94,7 +97,6 @@
             const data = contentData[currentLang];
             if (!data) return;
 
-            // Mapeamento manual e robusto para evitar erros de nomes de chaves
             document.getElementById('hero-title').textContent = data.heroTitle;
             document.getElementById('hero-desc').textContent = data.heroDesc;
             document.getElementById('exp-title').textContent = data.expTitle;
@@ -106,10 +108,8 @@
             document.getElementById('contact-btn').textContent = data.contactBtn;
             document.getElementById('menu-label').textContent = data.menuLabel;
             
-            // Correção específica para o botão de língua
             document.getElementById('lang-toggle').textContent = data.langLabel;
 
-            // Renderizar Menu
             const menuItems = [
                 { id: 'about', icon: 'fa-user', text: data.nav.about },
                 { id: 'experience', icon: 'fa-briefcase', text: data.nav.work },
@@ -125,7 +125,6 @@
                 </a>
             `).join('');
 
-            // Renderizar Projetos
             document.getElementById('proj-grid').innerHTML = data.projects.map((proj, i) => `
                 <div onclick="${proj.subProjects ? `openSubProjects(${i})` : `window.open('${proj.link}', '_blank')`}" class="cursor-pointer bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/20 dark:border-blue-400/20 shadow-lg hover:scale-[1.02] transition-all group relative">
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">${proj.tag}</div>
@@ -135,7 +134,6 @@
                 </div>
             `).join('');
 
-            // Renderizar Experiência
             document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${exp.date}</div>
@@ -147,7 +145,6 @@
                 </div>
             `).join('');
 
-            // Renderizar Educação
             document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${edu.date}</div>
@@ -155,7 +152,6 @@
                 </div>
             `).join('');
 
-            // Renderizar Skills
             document.getElementById('skills-list').innerHTML = data.skills.map(skill => `<div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 font-medium shadow-sm">${skill}</div>`).join('');
         }
 
@@ -179,7 +175,6 @@
             document.getElementById('projects-modal').classList.remove('hidden');
         }
 
-        // Lógica de Eventos
         document.getElementById('projects-overlay').onclick = () => document.getElementById('projects-modal').classList.add('hidden');
         
         document.getElementById('lang-toggle').onclick = () => { 
@@ -193,18 +188,20 @@
             icon.classList.toggle('fa-moon'); icon.classList.toggle('fa-sun');
         };
 
-        const toggleMenu = () => { navMenu.classList.toggle('hidden'); navMenu.classList.toggle('flex'); };
+        const toggleMenu = () => { 
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('hidden'); 
+            navMenu.classList.toggle('flex'); 
+        };
         document.getElementById('menu-btn').onclick = toggleMenu;
         document.getElementById('close-menu').onclick = toggleMenu;
 
         async function init() {
             try {
-                // Carrega idioma inicial
                 const resEn = await fetch('lang/en.json');
                 contentData['en'] = await resEn.json();
                 updateContent();
                 
-                // Carrega segundo idioma em background
                 fetch('lang/pt.json')
                     .then(res => res.json())
                     .then(data => contentData['pt'] = data)

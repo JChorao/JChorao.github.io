@@ -90,7 +90,7 @@
                     "techs": ["Java", "OOP", "Game Logic"]
                 },
                 {
-                    "title": "TP_AD",
+                    "title": "bESTCars",
                     "link": "https://github.com/JChorao/TP_AD",
                     "desc": "Sistema distribuído de aluguer de veículos desenvolvido em Java com arquitetura de microsserviços.",
                     "techs": ["Java", "Spring Boot", "Microservices", "Docker"]

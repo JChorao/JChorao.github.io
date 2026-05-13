@@ -1,0 +1,11 @@
+{
+  "name": "jchorao-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio profissional otimizado",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./style.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

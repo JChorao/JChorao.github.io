@@ -21,8 +21,11 @@
     <header class="fixed top-0 left-0 right-0 z-40 bg-[#F5F5DC]/80 dark:bg-[#121212]/80 backdrop-blur-md border-b border-transparent dark:border-zinc-800/50 transition-colors duration-300 shadow-sm dark:shadow-none">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tighter dark:text-white uppercase">João Oliveira</h1>
-            <div class="flex items-center gap-4">
-                <button id="lang-toggle" class="text-sm font-bold hover:text-blue-600 transition dark:text-zinc-400 dark:hover:text-white"></button>
+            
+            <div class="flex items-center gap-6">
+                <button id="lang-toggle" class="text-xs font-bold tracking-widest uppercase py-2 px-3 rounded-lg border border-transparent hover:border-blue-500/30 hover:text-blue-600 transition-all dark:text-zinc-400 dark:hover:text-white">
+                    </button>
+
                 <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition" aria-label="Modo Dark">
                     <i id="theme-icon" class="fa-solid fa-moon"></i>
                 </button>
@@ -91,14 +94,22 @@
             const data = contentData[currentLang];
             if (!data) return;
 
-            // Mapeamento de IDs
-            const textFields = ['hero-title', 'hero-desc', 'exp-title', 'edu-title', 'proj-title', 'skills-title', 'contact-title', 'contact-desc', 'contact-btn', 'menu-label', 'lang-toggle'];
-            textFields.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.textContent = data[id.replace(/-([a-z])/g, g => g[1].toUpperCase())] || data[id];
-            });
+            // Mapeamento manual e robusto para evitar erros de nomes de chaves
+            document.getElementById('hero-title').textContent = data.heroTitle;
+            document.getElementById('hero-desc').textContent = data.heroDesc;
+            document.getElementById('exp-title').textContent = data.expTitle;
+            document.getElementById('edu-title').textContent = data.eduTitle;
+            document.getElementById('proj-title').textContent = data.projTitle;
+            document.getElementById('skills-title').textContent = data.skillsTitle;
+            document.getElementById('contact-title').textContent = data.contactTitle;
+            document.getElementById('contact-desc').textContent = data.contactDesc;
+            document.getElementById('contact-btn').textContent = data.contactBtn;
+            document.getElementById('menu-label').textContent = data.menuLabel;
+            
+            // Correção específica para o botão de língua
+            document.getElementById('lang-toggle').textContent = data.langLabel;
 
-            // Menu
+            // Renderizar Menu
             const menuItems = [
                 { id: 'about', icon: 'fa-user', text: data.nav.about },
                 { id: 'experience', icon: 'fa-briefcase', text: data.nav.work },
@@ -114,7 +125,7 @@
                 </a>
             `).join('');
 
-            // Projetos principais
+            // Renderizar Projetos
             document.getElementById('proj-grid').innerHTML = data.projects.map((proj, i) => `
                 <div onclick="${proj.subProjects ? `openSubProjects(${i})` : `window.open('${proj.link}', '_blank')`}" class="cursor-pointer bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/20 dark:border-blue-400/20 shadow-lg hover:scale-[1.02] transition-all group relative">
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">${proj.tag}</div>
@@ -124,7 +135,7 @@
                 </div>
             `).join('');
 
-            // Experiência
+            // Renderizar Experiência
             document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${exp.date}</div>
@@ -136,7 +147,7 @@
                 </div>
             `).join('');
 
-            // Educação
+            // Renderizar Educação
             document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${edu.date}</div>
@@ -144,11 +155,10 @@
                 </div>
             `).join('');
 
-            // Skills
+            // Renderizar Skills
             document.getElementById('skills-list').innerHTML = data.skills.map(skill => `<div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 font-medium shadow-sm">${skill}</div>`).join('');
         }
 
-        // Função corrigida para exibir subprojetos com as tags de tecnologias
         function openSubProjects(index) {
             const proj = contentData[currentLang].projects[index];
             document.getElementById('sub-projects-title').textContent = proj.title;
@@ -160,7 +170,6 @@
                         <i class="fa-solid fa-external-link text-xs text-gray-400"></i>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">${sub.desc}</p>
-                    
                     <div class="flex flex-wrap gap-2 mt-3">
                         ${sub.techs ? sub.techs.map(t => `<span class="text-[10px] text-blue-500 font-mono bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">${t}</span>`).join('') : ''}
                     </div>
@@ -170,24 +179,32 @@
             document.getElementById('projects-modal').classList.remove('hidden');
         }
 
-        // Event Listeners Básicos
+        // Lógica de Eventos
         document.getElementById('projects-overlay').onclick = () => document.getElementById('projects-modal').classList.add('hidden');
-        document.getElementById('lang-toggle').onclick = () => { currentLang = currentLang === 'pt' ? 'en' : 'pt'; updateContent(); };
+        
+        document.getElementById('lang-toggle').onclick = () => { 
+            currentLang = currentLang === 'pt' ? 'en' : 'pt'; 
+            updateContent(); 
+        };
+
         document.getElementById('theme-toggle').onclick = () => {
             document.documentElement.classList.toggle('dark');
             const icon = document.getElementById('theme-icon');
             icon.classList.toggle('fa-moon'); icon.classList.toggle('fa-sun');
         };
+
         const toggleMenu = () => { navMenu.classList.toggle('hidden'); navMenu.classList.toggle('flex'); };
         document.getElementById('menu-btn').onclick = toggleMenu;
         document.getElementById('close-menu').onclick = toggleMenu;
 
         async function init() {
             try {
+                // Carrega idioma inicial
                 const resEn = await fetch('lang/en.json');
                 contentData['en'] = await resEn.json();
                 updateContent();
                 
+                // Carrega segundo idioma em background
                 fetch('lang/pt.json')
                     .then(res => res.json())
                     .then(data => contentData['pt'] = data)

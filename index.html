@@ -64,7 +64,7 @@
 
     <div id="projects-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-6">
         <div id="projects-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer"></div>
-        <div class="relative w-full max-w-2xl bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800">
+        <div class="relative w-full max-w-2xl bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-100 dark:border-zinc-800 max-h-[90vh] overflow-y-auto">
             <h3 id="sub-projects-title" class="text-2xl font-bold mb-6 dark:text-white"></h3>
             <div id="sub-projects-list" class="space-y-4"></div>
         </div>
@@ -114,7 +114,7 @@
                 </a>
             `).join('');
 
-            // Listas (Projetos, Experiência, Educação, Skills) - Reutilizando a lógica anterior mas minificada para performance
+            // Projetos principais
             document.getElementById('proj-grid').innerHTML = data.projects.map((proj, i) => `
                 <div onclick="${proj.subProjects ? `openSubProjects(${i})` : `window.open('${proj.link}', '_blank')`}" class="cursor-pointer bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-blue-500/20 dark:border-blue-400/20 shadow-lg hover:scale-[1.02] transition-all group relative">
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">${proj.tag}</div>
@@ -124,6 +124,7 @@
                 </div>
             `).join('');
 
+            // Experiência
             document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${exp.date}</div>
@@ -135,6 +136,7 @@
                 </div>
             `).join('');
 
+            // Educação
             document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${edu.date}</div>
@@ -142,18 +144,29 @@
                 </div>
             `).join('');
 
+            // Skills
             document.getElementById('skills-list').innerHTML = data.skills.map(skill => `<div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 font-medium shadow-sm">${skill}</div>`).join('');
         }
 
+        // Função corrigida para exibir subprojetos com as tags de tecnologias
         function openSubProjects(index) {
             const proj = contentData[currentLang].projects[index];
             document.getElementById('sub-projects-title').textContent = proj.title;
+            
             document.getElementById('sub-projects-list').innerHTML = proj.subProjects.map(sub => `
                 <a href="${sub.link}" target="_blank" class="block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group">
-                    <div class="flex justify-between items-center"><h5 class="font-bold dark:text-white group-hover:text-blue-500">${sub.title}</h5><i class="fa-solid fa-external-link text-xs text-gray-400"></i></div>
+                    <div class="flex justify-between items-center">
+                        <h5 class="font-bold dark:text-white group-hover:text-blue-500">${sub.title}</h5>
+                        <i class="fa-solid fa-external-link text-xs text-gray-400"></i>
+                    </div>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">${sub.desc}</p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        ${sub.techs ? sub.techs.map(t => `<span class="text-[10px] text-blue-500 font-mono bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">${t}</span>`).join('') : ''}
+                    </div>
                 </a>
             `).join('');
+            
             document.getElementById('projects-modal').classList.remove('hidden');
         }
 
@@ -170,11 +183,20 @@
         document.getElementById('close-menu').onclick = toggleMenu;
 
         async function init() {
-            const resEn = await fetch('lang/en.json');
-            contentData['en'] = await resEn.json();
-            updateContent();
-            fetch('lang/pt.json').then(res => res.json()).then(data => contentData['pt'] = data);
+            try {
+                const resEn = await fetch('lang/en.json');
+                contentData['en'] = await resEn.json();
+                updateContent();
+                
+                fetch('lang/pt.json')
+                    .then(res => res.json())
+                    .then(data => contentData['pt'] = data)
+                    .catch(err => console.error("Erro ao carregar idioma PT", err));
+            } catch (err) {
+                console.error("Erro ao inicializar:", err);
+            }
         }
+        
         init();
     </script>
 </body>

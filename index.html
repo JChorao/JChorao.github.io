@@ -6,6 +6,9 @@
     <title>João Oliveira | Portfolio</title>
     <meta name="description" content="João Oliveira - Computer Engineering Student and Software Developer Portfolio">
 
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,6 +24,7 @@
             }
         }
     </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -45,7 +49,7 @@
     <main class="max-w-5xl mx-auto px-6 pt-28 pb-40">
         <section id="about" class="flex flex-col md:flex-row items-center gap-12 mb-24 pt-4">
             <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-2xl flex-shrink-0">
-                <img src="https://via.placeholder.com/300" alt="João Oliveira" class="w-full h-full object-cover">
+                <img src="https://via.placeholder.com/300" alt="João Oliveira" fetchpriority="high" class="w-full h-full object-cover">
             </div>
             <div class="text-center md:text-left">
                 <h2 id="hero-title" class="text-4xl md:text-5xl font-extrabold mb-4 dark:text-white tracking-tight"></h2>
@@ -130,21 +134,10 @@
         let currentLang = 'en';
         let contentData = {};
 
-        async function loadLanguage(lang) {
-            try {
-                const response = await fetch(`lang/${lang}.json`);
-                contentData[lang] = await response.json();
-                if (currentLang === lang) updateContent();
-            } catch (error) {
-                console.error("Erro ao carregar idioma:", error);
-            }
-        }
-
         function updateContent() {
             const data = contentData[currentLang];
             if (!data) return;
 
-            // Textos Base e novos rótulos
             document.getElementById('hero-title').textContent = data.heroTitle;
             document.getElementById('hero-desc').textContent = data.heroDesc;
             document.getElementById('exp-title').textContent = data.expTitle;
@@ -155,9 +148,8 @@
             document.getElementById('contact-desc').textContent = data.contactDesc;
             document.getElementById('contact-btn').textContent = data.contactBtn;
             document.getElementById('menu-label').textContent = data.menuLabel;
-            document.getElementById('lang-toggle').textContent = data.langLabel; // Atualiza o botão de língua
+            document.getElementById('lang-toggle').textContent = data.langLabel; 
 
-            // Grelha do Menu
             const menuItems = [
                 { id: 'about', icon: 'fa-user', text: data.nav.about },
                 { id: 'experience', icon: 'fa-briefcase', text: data.nav.work },
@@ -174,7 +166,6 @@
                 </a>
             `).join('');
 
-            // Projetos
             document.getElementById('proj-grid').innerHTML = data.projects.map((proj, index) => {
                 const action = proj.subProjects ? `onclick="openSubProjects(${index})"` : `onclick="window.open('${proj.link}', '_blank')"`;
                 return `
@@ -189,7 +180,6 @@
                 `;
             }).join('');
 
-            // Experiência
             document.getElementById('exp-list').innerHTML = data.experiences.map(exp => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${exp.date}</div>
@@ -201,7 +191,6 @@
                 </div>
             `).join('');
 
-            // Educação
             document.getElementById('edu-list').innerHTML = data.education.map(edu => `
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 dark:text-zinc-600 text-sm">${edu.date}</div>
@@ -212,7 +201,6 @@
                 </div>
             `).join('');
 
-            // Skills
             document.getElementById('skills-list').innerHTML = data.skills.map(skill => `
                 <div class="bg-white dark:bg-zinc-900 px-8 py-4 rounded-2xl border border-gray-100 dark:border-zinc-800 text-center font-medium shadow-sm">
                     ${skill}
@@ -223,7 +211,6 @@
         function openSubProjects(index) {
             const data = contentData[currentLang].projects[index];
             
-            // Vai buscar o título do projeto clicado e altera o título do modal
             document.getElementById('sub-projects-title').textContent = data.title;
 
             const list = document.getElementById('sub-projects-list');
@@ -258,7 +245,6 @@
             icon.classList.toggle('fa-sun');
         });
 
-        // Lógica do Menu
         const navMenu = document.getElementById('nav-menu');
         function toggleMenu() {
             navMenu.classList.toggle('hidden');
@@ -271,8 +257,26 @@
             if (e.target.closest('.menu-link')) toggleMenu();
         });
 
-        loadLanguage('en');
-        loadLanguage('pt');
+        // Otimização JS: Renderiza o conteúdo do EN imediatamente sem esperar pelo PT
+        async function init() {
+            try {
+                // Carrega idioma principal e renderiza na hora para o site aparecer rápido
+                const resEn = await fetch('lang/en.json');
+                contentData['en'] = await resEn.json();
+                updateContent();
+
+                // Carrega o idioma secundário silenciosamente em background
+                fetch('lang/pt.json')
+                    .then(res => res.json())
+                    .then(data => contentData['pt'] = data)
+                    .catch(err => console.error("Erro ao carregar o idioma PT em background:", err));
+            } catch (error) {
+                console.error("Erro ao iniciar a aplicação:", error);
+            }
+        }
+
+        // Iniciar a aplicação
+        init();
     </script>
 </body>
 </html>

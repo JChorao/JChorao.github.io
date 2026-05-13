@@ -35,13 +35,13 @@
     "education": [
         {
             "date": "2023 - Present",
-            "degree": "Bachelor's in Computer Engineering",
-            "school": "Polytechnic Institute of Castelo Branco"
+            "degree": "BSc, Computer Engineering",
+            "school": "Polytechnic University of Castelo Branco"
         },
         {
             "date": "2020 - 2023",
-            "degree": "CTeSP in Information Systems Programming and Technologies",
-            "school": "Polytechnic Institute of Castelo Branco"
+            "degree": "Associate Degree, Information Systems Programming and Technologies",
+            "school": "Polytechnic University of Castelo Branco"
         }
     ],
     "projects": [

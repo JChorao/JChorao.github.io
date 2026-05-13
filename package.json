@@ -2,10 +2,22 @@
   "name": "jchorao-portfolio",
   "version": "1.0.0",
   "description": "Portfolio profissional otimizado",
+  "homepage": "https://github.com/JChorao/JChorao.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/JChorao/JChorao.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JChorao/JChorao.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "tailwind.config.js",
   "scripts": {
     "build": "tailwindcss -i ./input.css -o ./style.css --minify"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.19"
   }
 }

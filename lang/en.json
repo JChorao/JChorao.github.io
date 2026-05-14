@@ -54,7 +54,7 @@
                 {
                     "title": "VitraeView",
                     "link": "https://github.com/JChorao/",
-                    "desc": "Mobile Application to control VitraeView, using Firebase for real-time communication.",
+                    "desc": "Mobile Application to control VitraeWindow, using Firebase for real-time communication.",
                     "techs": ["Firebase", "Flutter", "Mobile"]
                 },
                 {
@@ -68,7 +68,7 @@
         {
             "title": "Academic Projects",
             "tag": "Github",
-            "desc": "Collection of projects focused on APIs, data monitoring, and game logic.",
+            "desc": "Collection of academic projects focused on APIs, data monitoring, and game logic.",
             "techs": ["Node.js", "Java", "Express"],
             "subProjects": [
                 {
@@ -98,5 +98,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "Json"]
+    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "json", "Docker"]
 }

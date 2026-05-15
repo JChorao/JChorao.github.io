@@ -169,10 +169,10 @@
             document.getElementById('sub-projects-title').textContent = proj.title;
             
             document.getElementById('sub-projects-list').innerHTML = proj.subProjects.map(sub => `
-                <a href="${sub.link}" target="_blank" class="block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group relative">
+                <div onclick="window.open('${sub.link}', '_blank')" class="cursor-pointer block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group relative">
                     <div class="flex justify-between items-center">
                         <h5 class="font-bold dark:text-white group-hover:text-blue-500">${sub.title}</h5>
-                        <i class="fa-solid fa-external-link text-xs text-gray-400"></i>
+                        <i class="fa-solid fa-external-link text-xs text-gray-400 group-hover:text-blue-500 transition-colors"></i>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">${sub.desc}</p>
                     ${sub.collaborator ? `
@@ -183,7 +183,7 @@
                     <div class="flex flex-wrap gap-2 mt-3">
                         ${sub.techs ? sub.techs.map(t => `<span class="text-[10px] text-blue-500 font-mono bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">${t}</span>`).join('') : ''}
                     </div>
-                </a>
+                </div>
             `).join('');
             
             document.getElementById('projects-modal').classList.remove('hidden');

@@ -49,12 +49,14 @@
             "title": "VitraeView",
             "tag": "Projeto Final",
             "desc": "Transformação de janelas em ecrãs interativos usando Raspberry Pi para processamento local e Firebase para gestão em tempo real.",
+            "collaborator": "Em colaboração com Tiago Pinheiro (@tmp2003)",
             "techs": ["Raspberry Pi", "Firebase", "Hardware"],
             "subProjects": [
                 {
                     "title": "VitraeView",
-                    "link": "https://github.com/JChorao/",
-                    "desc": "Aplicação Movel de Controlar o VitraeWindow, utilizando Firebase para comunicação em tempo real.",
+                    "link": "https://github.com/tmp2003/VitraeViewRepo",
+                    "desc": "Aplicação Móvel para controlar o VitraeWindow, utilizando Firebase para comunicação em tempo real.",
+                    "collaborator": "App desenvolvida maioritariamente por Tiago Pinheiro",
                     "techs": ["Firebase", "Flutter", "Mobile"]
                 },
                 {

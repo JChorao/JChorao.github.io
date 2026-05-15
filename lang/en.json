@@ -49,12 +49,14 @@
             "title": "VitraeView",
             "tag": "Final Project",
             "desc": "Transformation of windows into interactive screens using Raspberry Pi for local processing and Firebase for real-time management.",
+            "collaborator": "In collaboration with Tiago Pinheiro (@tmp2003)",
             "techs": ["Raspberry Pi", "Firebase", "Hardware"],
             "subProjects": [
                 {
                     "title": "VitraeView",
-                    "link": "https://github.com/JChorao/",
+                    "link": "https://github.com/tmp2003/VitraeViewRepo",
                     "desc": "Mobile Application to control VitraeWindow, using Firebase for real-time communication.",
+                    "collaborator": "App developed primarily by Tiago Pinheiro",
                     "techs": ["Firebase", "Flutter", "Mobile"]
                 },
                 {

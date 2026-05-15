@@ -134,7 +134,11 @@
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">${proj.tag}</div>
                     <h4 class="font-bold text-lg dark:text-zinc-100 group-hover:text-blue-500">${proj.title}</h4>
                     <p class="text-gray-600 dark:text-zinc-400 text-sm mt-3">${proj.desc}</p>
-                    ${proj.collaborator ? `<div class="mt-3 flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-zinc-400"><i class="fa-solid fa-user-group"></i> <span>${proj.collaborator}</span></div>` : ''}
+                    ${proj.collaborator ? `
+                        <div class="mt-3 flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-zinc-400">
+                            <i class="fa-solid fa-user-group"></i> 
+                            <span>${proj.collaborator.text} <a href="${proj.collaborator.link}" target="_blank" onclick="event.stopPropagation()" class="inline-flex items-center gap-1 ml-1 text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i class="fab fa-github"></i>${proj.collaborator.github}</a></span>
+                        </div>` : ''}
                     <div class="mt-6 flex flex-wrap gap-2">${proj.techs.map(t => `<span class="text-xs px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">${t}</span>`).join('')}</div>
                 </div>
             `).join('');
@@ -165,13 +169,17 @@
             document.getElementById('sub-projects-title').textContent = proj.title;
             
             document.getElementById('sub-projects-list').innerHTML = proj.subProjects.map(sub => `
-                <a href="${sub.link}" target="_blank" class="block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group">
+                <a href="${sub.link}" target="_blank" class="block p-4 rounded-2xl border border-gray-100 dark:border-zinc-800 hover:border-blue-500 transition-all bg-gray-50 dark:bg-zinc-800/30 group relative">
                     <div class="flex justify-between items-center">
                         <h5 class="font-bold dark:text-white group-hover:text-blue-500">${sub.title}</h5>
                         <i class="fa-solid fa-external-link text-xs text-gray-400"></i>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">${sub.desc}</p>
-                    ${sub.collaborator ? `<div class="mt-2 flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-zinc-400"><i class="fa-solid fa-user-group"></i> <span>${sub.collaborator}</span></div>` : ''}
+                    ${sub.collaborator ? `
+                        <div class="mt-2 flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-zinc-400 relative z-10">
+                            <i class="fa-solid fa-user-group"></i> 
+                            <span>${sub.collaborator.text} <a href="${sub.collaborator.link}" target="_blank" onclick="event.stopPropagation()" class="inline-flex items-center gap-1 ml-1 text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i class="fab fa-github"></i>${sub.collaborator.github}</a></span>
+                        </div>` : ''}
                     <div class="flex flex-wrap gap-2 mt-3">
                         ${sub.techs ? sub.techs.map(t => `<span class="text-[10px] text-blue-500 font-mono bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">${t}</span>`).join('') : ''}
                     </div>

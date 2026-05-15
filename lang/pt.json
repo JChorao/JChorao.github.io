@@ -1,6 +1,6 @@
 {
     "heroTitle": "Developer",
-    "heroDesc": "Dedicado a construir soluções de software eficientes e otimização de sistemas. Atualmente a refinar competências na Licenciatura em Engenharia Informática no IPCB.",
+    "heroDesc": "Estudante na fase final da Licenciatura em Engenharia Informática, com forte base no desenvolvimento de software e resolução de problemas. Movido pela dedicação que também aplico como dirigente no CNE, destaco-me pelo espírito de equipa e proatividade. Procuro agora um novo desafio profissional onde possa crescer e contribuir tecnicamente.",
     "expTitle": "Experiência",
     "eduTitle": "Educação",
     "projTitle": "Projetos",
@@ -15,7 +15,7 @@
         "work": "Trabalho",
         "education": "Educação",
         "projects": "Projetos",
-        "skills": "Skills",
+        "skills": "Tecnologias",
         "contact": "Contactos"
     },
     "experiences": [
@@ -108,5 +108,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "json", "Docker"]
+    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "JSON", "Docker"]
 }

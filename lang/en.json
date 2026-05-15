@@ -1,6 +1,6 @@
 {
     "heroTitle": "Developer",
-    "heroDesc": "Dedicated to building efficient software solutions and optimizing systems. Currently refining skills in the Computer Engineering Bachelor's Degree at IPCB.",
+    "heroDesc": "Final-year Computer Engineering student with a strong foundation in software development and problem-solving. Driven by the same dedication I apply as a scout leader at CNE, I stand out for my team spirit and proactivity. I am currently seeking a new professional challenge where I can grow and contribute technically.",
     "expTitle": "Experience",
     "eduTitle": "Education",
     "projTitle": "Projects",
@@ -108,5 +108,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "json", "Docker"]
+    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "JSON", "Docker"]
 }

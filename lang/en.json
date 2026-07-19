@@ -3,6 +3,7 @@
     "heroDesc": "Final-year Computer Engineering student with a strong foundation in software development and problem-solving. Driven by the same dedication I apply as a scout leader at CNE, I stand out for my team spirit and proactivity. I am currently seeking a new professional challenge where I can grow and contribute technically.",
     "expTitle": "Experience",
     "eduTitle": "Education",
+    "certTitle": "Licenses & Certifications",
     "projTitle": "Projects",
     "skillsTitle": "Technical Skills",
     "contactTitle": "Contact",
@@ -10,10 +11,12 @@
     "contactBtn": "Contact on LinkedIn",
     "menuLabel": "MENU",
     "langLabel": "EN",
+    "view_credential": "View credential",
     "nav": {
         "about": "About",
         "work": "Work",
         "education": "Education",
+        "certifications": "Certifications",
         "projects": "Projects",
         "skills": "Skills",
         "contact": "Contact"
@@ -34,14 +37,35 @@
     ],
     "education": [
         {
-            "date": "2023 - Present",
+            "date": "2023 - 2026",
             "degree": "BSc, Computer Engineering",
-            "school": "Polytechnic University of Castelo Branco"
+            "school": "Polytechnic University of Castelo Branco",
+            "grade": "Final Grade: 14/20"
         },
         {
             "date": "2020 - 2023",
             "degree": "Associate Degree, Information Systems Programming and Technologies",
-            "school": "Polytechnic University of Castelo Branco"
+            "school": "Polytechnic University of Castelo Branco",
+            "grade": "Final Grade: 14/20"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "AWS Academy Graduate - AWS Academy Data Engineering",
+            "issuer": "Amazon Web Services (AWS)",
+            "date": "May 2025",
+            "link": "https://www.credly.com/badges/68ab8bf8-bde1-4868-b6e9-13ec44e544cd/linked_in_profile"
+        },
+        {
+            "title": "Neo4j Certified Professional",
+            "issuer": "Neo4j",
+            "date": "Feb 2025",
+            "link": "https://graphacademy.neo4j.com/c/dc3936cd-bc83-4df7-8939-d73b386b3554"
+        },
+        {
+            "title": "Cybersecurity Essentials",
+            "issuer": "Cisco",
+            "date": "Jan 2023"
         }
     ],
     "projects": [
@@ -98,5 +122,5 @@
             ]
         }
     ],
-    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "JSON", "Docker", "Git"]
+    "skills": ["Java", "PHP", "Node.js", "Spring Boot", "Python", "SQL", "NoSQL", "Docker", "Git"]
 }

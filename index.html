@@ -60,6 +60,7 @@
 
         <section id="experience" class="mb-24"><h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white"><span class="w-8 h-1 bg-black dark:bg-white mr-4"></span><span id="exp-title"></span></h3><div id="exp-list" class="space-y-12"></div></section>
         <section id="education" class="mb-24"><h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white"><span class="w-8 h-1 bg-black dark:bg-white mr-4"></span><span id="edu-title"></span></h3><div id="edu-list" class="space-y-12"></div></section>
+        <section id="certifications" class="mb-24"><h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white"><span class="w-8 h-1 bg-black dark:bg-white mr-4"></span><span id="cert-title"></span></h3><div id="cert-grid" class="grid md:grid-cols-3 gap-6"></div></section>
         <section id="projects" class="mb-24"><h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white"><span class="w-8 h-1 bg-black dark:bg-white mr-4"></span><span id="proj-title"></span></h3><div id="proj-grid" class="grid md:grid-cols-2 gap-6"></div></section>
         <section id="skills" class="mb-24"><h3 class="text-2xl font-bold mb-10 flex items-center dark:text-white"><span class="w-8 h-1 bg-black dark:bg-white mr-4"></span><span id="skills-title"></span></h3><div id="skills-list" class="flex flex-wrap justify-center gap-4"></div></section>
 
@@ -105,6 +106,7 @@
             document.getElementById('hero-desc').textContent = data.heroDesc;
             document.getElementById('exp-title').textContent = data.expTitle;
             document.getElementById('edu-title').textContent = data.eduTitle;
+            document.getElementById('cert-title').textContent = data.certTitle;
             document.getElementById('proj-title').textContent = data.projTitle;
             document.getElementById('skills-title').textContent = data.skillsTitle;
             document.getElementById('contact-title').textContent = data.contactTitle;
@@ -118,6 +120,7 @@
                 { id: 'about', icon: 'fa-user', text: data.nav.about },
                 { id: 'experience', icon: 'fa-briefcase', text: data.nav.work },
                 { id: 'education', icon: 'fa-graduation-cap', text: data.nav.education },
+                { id: 'certifications', icon: 'fa-certificate', text: data.nav.certifications },
                 { id: 'projects', icon: 'fa-code', text: data.nav.projects },
                 { id: 'skills', icon: 'fa-laptop-code', text: data.nav.skills },
                 { id: 'contact', icon: 'fa-envelope', text: data.nav.contact }
@@ -158,6 +161,18 @@
                 <div class="flex flex-col md:flex-row md:gap-8 border-t border-gray-100 dark:border-zinc-800 pt-8 first:border-0 first:pt-0">
                     <div class="md:w-1/4 mb-2 font-bold text-gray-400 text-sm">${edu.date}</div>
                     <div class="md:w-3/4"><h4 class="text-xl font-bold dark:text-zinc-100">${edu.degree}</h4><p class="text-blue-600 dark:text-blue-400 font-medium">${edu.school}</p></div>
+                </div>
+            `).join('');
+
+            document.getElementById('cert-grid').innerHTML = data.certifications.map(cert => `
+                <div class="bg-white/50 dark:bg-zinc-900/50 p-6 rounded-3xl border border-gray-100 dark:border-zinc-800 shadow-lg flex flex-col">
+                    <h4 class="font-bold text-base dark:text-zinc-100 leading-tight">${cert.title}</h4>
+                    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mt-2">${cert.issuer}</p>
+                    <p class="text-gray-400 dark:text-zinc-500 text-xs uppercase tracking-wider font-semibold mt-4">${cert.date}</p>
+                    ${cert.link ? `
+                        <a href="${cert.link}" target="_blank" onclick="event.stopPropagation()" class="mt-4 inline-flex items-center justify-center gap-2 border border-gray-200 dark:border-zinc-700 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-zinc-300 font-semibold text-xs px-4 py-2 rounded-full transition-colors w-fit">
+                            ${data.view_credential || 'View credential'} <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>` : ''}
                 </div>
             `).join('');
 

@@ -35,6 +35,10 @@
                 <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-yellow-400 hover:scale-110 transition" aria-label="Modo Dark">
                     <i id="theme-icon" class="fa-solid fa-moon"></i>
                 </button>
+
+                <button id="menu-btn" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all">
+                    <i class="fa-solid fa-bars"></i> <span id="menu-label"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -86,12 +90,6 @@
         <div class="relative w-[90%] md:w-[40%] bg-[#18181b] rounded-[2rem] p-6 shadow-2xl border border-white/5">
             <nav id="nav-menu-grid" class="grid grid-cols-2 gap-4"></nav>
         </div>
-    </div>
-
-    <div class="fixed bottom-8 left-0 right-0 flex justify-center z-50 pointer-events-none">
-        <button id="menu-btn" class="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md border border-white/20 dark:border-zinc-700/30 shadow-2xl text-black dark:text-white font-bold text-[10px] tracking-[0.2em] hover:scale-105 transition-all">
-            <i class="fa-solid fa-bars"></i> <span id="menu-label"></span>
-        </button>
     </div>
 
     <script>
